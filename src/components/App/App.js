@@ -1,38 +1,27 @@
-import logo from '../../logo.svg';
+import '../../index.css';
 import './App.css';
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import MainScreen from '../MainScreen/MainScreen';
+import SecondScreen from '../SecondScreen/SecondScreen';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
+  const navigate = useNavigate();
 
 
-  
+  function GoNext(){
+    let path = `/start`
+    navigate(path)
+  }
+
   return (
     <Routes>
-      <Route path='/' exact element={MainScreen}>
-        
-        {/* <MainScreen/> */}
-      </Route>
+      <Route path="/"exact element={<MainScreen/>} onClick={GoNext}></Route>
+      <Route path="/start" exact element={<SecondScreen/>}></Route>
     </Routes>
   );
 }
 
 export default App;
-
-
-{/* <header className="App-header">
-<img src={logo} className="App-logo" alt="logo" />
-<p>
-  Edit <code>src/App.js</code> and save to reload.
-</p>
-<a
-  className="App-link"
-  href="https://reactjs.org"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Learn React
-</a>
-</header> */}
 
