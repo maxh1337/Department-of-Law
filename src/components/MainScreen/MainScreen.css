@@ -1,0 +1,5 @@
+.Buttons{
+    width:calc(100% - 4px);
+    padding:5px 2px 100px;
+    z-index:1
+}
