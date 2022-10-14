@@ -1,0 +1,6 @@
+.criminal-case{
+    position: absolute;
+    left: calc(50% + 248px);
+    width: 58px;
+    top: 19px;
+}
