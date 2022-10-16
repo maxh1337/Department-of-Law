@@ -4,6 +4,9 @@
     width: 58px;
     top: 19px;
 }
+.borderjs{
+    border: 5px solid yellow;
+}
 .buttonToChoose1{
     display: inline-block;
     position: absolute;
@@ -14,7 +17,7 @@
     border-radius: 20px;
     cursor: pointer;
     background: transparent;
-    border: none;
+    /* border: none; */
 }
 .buttonToChoose1:hover{
     background-color: transparent;
@@ -39,7 +42,7 @@
     border-radius: 20px;
     cursor: pointer;
     background: transparent;
-    border: none;
+    /* border: none; */
 }
 
 .buttonToChoose3{
@@ -52,5 +55,5 @@
     border-radius: 20px;
     cursor: pointer;
     background: transparent;
-    border: none;
+    /* border: none; */
 }

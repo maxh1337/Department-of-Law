@@ -2,16 +2,46 @@ import p2 from '../../images/p2.jpg'
 import './ChooseCharacter.css'
 import res1 from '../../images/buttons/Resurs_1_4x.png'
 import res2 from '../../images/buttons/Resurs_2_4x.png'
-import { Link } from 'react-router-dom';
+import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom'
 
 
-function ChooseCharacter(changeCharacterState2, changeCharacterState3, nextPage){
-
+function ChooseCharacter(){
+    const btn1 = document.querySelector(".buttonToChoose1");
+    const btn2 = document.querySelector(".buttonToChoose2");
+    const btn3 = document.querySelector(".buttonToChoose3");
+    const navigate = useNavigate();
+    const [currentCharacter, setCurrentCharacter] = useState(0)
     const changeCharacterState1 = () => {
-        document.getElementsById("12").style.border = "border: 5px solid yellow;";
-        console.log("Залупа")
+        setCurrentCharacter(1);
+
+        btn1.classList.add("borderjs")
+        console.log(currentCharacter);
+        btn2.classList.remove("borderjs")
+        btn3.classList.remove("borderjs")
     }
-    
+    const changeCharacterState2 = () => {
+        setCurrentCharacter(2);
+
+        btn2.classList.add("borderjs")
+        console.log(currentCharacter);
+        btn1.classList.remove("borderjs")
+        btn3.classList.remove("borderjs")
+    }
+    const changeCharacterState3 = () => {
+        setCurrentCharacter(3);
+
+        btn3.classList.add("borderjs")
+        console.log(currentCharacter);
+        btn1.classList.remove("borderjs")
+        btn2.classList.remove("borderjs")
+    }
+    const nextPage = () => {
+        if(currentCharacter == 1) {navigate("/start")}
+        if(currentCharacter == 2) {navigate("/choosecharacter")}
+        if(currentCharacter == 3) {navigate("/")}
+    }
     return(
         <div className='App'>
         <div>
