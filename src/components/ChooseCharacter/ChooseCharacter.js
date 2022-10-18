@@ -3,8 +3,7 @@ import './ChooseCharacter.css'
 import res1 from '../../images/buttons/Resurs_1_4x.png'
 import res2 from '../../images/buttons/Resurs_2_4x.png'
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
-import { Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 
 function ChooseCharacter(){
@@ -17,7 +16,6 @@ function ChooseCharacter(){
         setCurrentCharacter(1);
 
         btn1.classList.add("borderjs")
-        console.log(currentCharacter);
         btn2.classList.remove("borderjs")
         btn3.classList.remove("borderjs")
     }
@@ -25,7 +23,6 @@ function ChooseCharacter(){
         setCurrentCharacter(2);
 
         btn2.classList.add("borderjs")
-        console.log(currentCharacter);
         btn1.classList.remove("borderjs")
         btn3.classList.remove("borderjs")
     }
@@ -33,17 +30,16 @@ function ChooseCharacter(){
         setCurrentCharacter(3);
 
         btn3.classList.add("borderjs")
-        console.log(currentCharacter);
         btn1.classList.remove("borderjs")
         btn2.classList.remove("borderjs")
     }
     const nextPage = () => {
-        if(currentCharacter == 1) {navigate("/start")}
-        if(currentCharacter == 2) {navigate("/choosecharacter")}
-        if(currentCharacter == 3) {navigate("/")}
+        if(currentCharacter == 1) {navigate("/choosecharacter1")}
+        if(currentCharacter == 2) {navigate("/choosecharacter1")}
+        if(currentCharacter == 3) {navigate("/choosecharacter1")}
     }
+
     return(
-        <div className='App'>
         <div>
             <button id='12' className='buttonToChoose1' onClick={changeCharacterState1}/>
             <button className='buttonToChoose2' onClick={changeCharacterState2}/>
@@ -56,10 +52,9 @@ function ChooseCharacter(){
                 <img className='criminal-case' alt='Следователь' src={res1}/>
             </a>
             <div className="Buttons">
-                <button className='linkButton' onClick={nextPage}>Дальше</button>
+                <button className='linkButton' onClick={nextPage} id="btn1">Дальше</button>
             </div>
 
-        </div>
         </div>
     )
 }

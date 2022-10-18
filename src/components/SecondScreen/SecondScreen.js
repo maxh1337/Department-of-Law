@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 function MainScreen(){
     return(
-        <div className='App'>
         <div>
             <img width="640" height="542" src={p1} alt="p0"></img>
             <div className="Buttons">
@@ -16,7 +15,6 @@ function MainScreen(){
                 <a data-to-page="exit" className="shkaf" href='/' style={{ position: 'absolute', top: '345px', left: 'calc(50% - 150px)', width: '295px', height: '60px', color: 'white',}}></a>
                 <a data-to-page="about game" className="shkaf" style={{ position: 'absolute', top: '416px', left: 'calc(50% - 150px)', width: '295px', height: '70px', color: 'white',}}></a>
             </div>
-        </div>
         </div>
     );
 }
