@@ -2,10 +2,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import criminalcase from '../../images/buttons/criminal_case.png'
 import doc1 from "../../images/doc1.jpg"
+import Error from "../error/error";
 
 function ThirdE(){
     const [IsPopupOpened, setIsPopupOpened] = useState(false)
     const navigate = useNavigate();
+    const [error, setError] = useState(false)
 
     const showPopup = () => {
         const popup = document.querySelector(".criminal-case-modal")
@@ -34,14 +36,20 @@ function ThirdE(){
             inputValue === 'статья 51 Конституции Российской Федерации'
         ) {
             navigate("/4");
+            localStorage.setItem("step", 4)
+
         } else {
-            navigate("/3explanation")
+            setError(true)
         }
+    }
+    const setErrorNone = () => {
+        setError(false)
     }
 
 
-
     return(
+        <>
+        { (error === false) ?
         <div>
             <img width="640" height="542" src={doc1} alt="p9"></img>
             <a title='Материалы дела'>
@@ -61,6 +69,10 @@ function ThirdE(){
                 <button onClick={CheckAndRedirect} >Проверить</button>
             </div>
         </div>
+        : 
+        <Error onClick1={setErrorNone} button1="Понятно" text="Статья 51 Конституции РФ: «Никто не обязан свидетельствовать против себя самого, своего супруга и близких родственников, круг которых определяется федеральным законом»" button2style={{display : "none"}} newButton={ <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1xNBuRjMF6WrEE_I39d5oCKwZHIRm9JgW/view">
+        <button>Не понятно</button></a>}/>
+        }</>
     )
 }
 

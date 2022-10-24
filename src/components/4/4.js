@@ -1,10 +1,12 @@
 import p10 from "../../images/p10.jpg"
-import criminalcase from '../../images/buttons/criminal_case.png'
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import Error from "../error/error";
+import criminalcase from '../../images/buttons/criminal_case.png'
 
 function Four(){
     const [IsPopupOpened, setIsPopupOpened] = useState(false)
+    const [errorShowed, setErrorShowed] = useState(false)
     const navigate = useNavigate();
     const [j1, setJ1] = useState(0);
     const [j2, setJ2] = useState(0);
@@ -25,8 +27,9 @@ function Four(){
     const nextPage = () => {
         if (j1 === 1 & j2 === 1 & j3 === 1 & j4 === 1 & j5 === 1) {
             navigate("/5");
+            localStorage.setItem("step", 5)
         } else {
-            // navigate("/error")
+            setErrorShowed(true)
         }
     }
     const TriggerStyle1 = () => {
@@ -81,14 +84,19 @@ function Four(){
             setJ5(0)
         }
     }
-
+        const GoBack = () => {
+        setErrorShowed(false)
+    }
+    
     return(
+        <>
+        {(errorShowed === false) ?
         <div>
             <a title='Материалы дела'>
                 <img alt='Материалы дела' className='criminal-case' src={criminalcase} onClick={showPopup}/>
-                <div className='criminal-case-modal'>
+                <div className='criminal-case-modal' id="criminal-case-modal">
                     <a href='https://drive.google.com/file/d/1ogUDREkHV6kWEG-wtAslDpj2FrXNxiS1/view' target="_blank" rel='noopener noreferrer'>
-                       <button>Заявление о преступлении</button> 
+                    <button>Заявление о преступлении</button> 
                     </a>
                 </div>
             </a>
@@ -102,6 +110,9 @@ function Four(){
             <div className="multiple-cloud" id="4-4" onClick={TriggerStyle4} style={{position: "absolute", top: "160px", left: "calc(50% + 45px)", width: "220px", height: "85px"}}></div>
             <div className="multiple-cloud" id="4-5" onClick={TriggerStyle5} style={{position: "absolute", top: "278px", left: "calc(50% - 110px)", width: "295px", height: "90px"}}></div>
         </div>
+        : <Error text="И ЭТО ВСЕ, ЧТО ТЫ ПОМНИШЬ ?" button1="Назад" button2style={{display: "none"}} onClick1={GoBack}/>
+        }
+        </>
     )
 }
 

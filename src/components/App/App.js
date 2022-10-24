@@ -2,8 +2,7 @@ import '../../index.css';
 import './App.css';
 import React from 'react';
 import { useState } from 'react';
-import { Route, Routes } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import MainScreen from '../MainScreen/MainScreen';
 import SecondScreen from '../SecondScreen/SecondScreen';
 import ChooseCharacter from '../ChooseCharacter/ChooseCharacter';
@@ -14,13 +13,30 @@ import First from '../1/1';
 import Second from '../2/2';
 import Third from '../3/3';
 import ThirdE from '../3e/3e';
-import ThirdExplanation from '../3explanation/3explanation';
 import Four from '../4/4';
+import Error from '../error/error';
+import Five from '../5/5';
+import Six from '../6/6';
+import Seven from '../7/7';
+import Eight from '../8/8';
+import Nine from '../9/9';
+import Ten from '../10/10';
+import Eleven from '../11/11';
+import Twelve from '../12/12';
+import Thirteen from '../13/13';
+import Fourteen from '../14/14';
+import Fifthteen from '../15/15';
+import Sixteen from '../16/16';
+import Seventeen from '../17/17';
+import Eighteen from '../18/18';
+import Nineteen from '../19/19';
 
 function App(){
   const [scale, setScale] = useState(1.53);
 
+
   window.addEventListener(`resize`, () => {
+    // eslint-disable-next-line no-unused-vars
     const scale = setScale(getScale());
 }, false);
 
@@ -47,8 +63,23 @@ const getScale = () => {
       <Route path='/2' exact element={<Second/>}/>
       <Route path='/3' exact element={<Third/>}/>
       <Route path='/3e' exact element={<ThirdE/>}/>
-      <Route path='/3explanation' exact element={<ThirdExplanation/>}/>
       <Route path='/4' exact element={<Four/>}/>
+      <Route path='/error' exact element={<Error/>}/>
+      <Route path='/5' exact element={<Five/>}/>
+      <Route path='/6' exact element={<Six/>}/>
+      <Route path='/7' exact element={<Seven/>}/>
+      <Route path='/8' exact element={<Eight/>}/>
+      <Route path='/9' exact element={<Nine/>}/>
+      <Route path='/10' exact element={<Ten/>}/>
+      <Route path='/11' exact element={<Eleven/>}/>
+      <Route path='/12' exact element={<Twelve/>}/>
+      <Route path='/13' exact element={<Thirteen/>}/>
+      <Route path='/14' exact element={<Fourteen/>}/>
+      <Route path='/15' exact element={<Fifthteen/>}/>
+      <Route path='/16' exact element={<Sixteen/>}/>
+      <Route path='/17' exact element={<Seventeen/>}/>
+      <Route path='/18' exact element={<Eighteen/>}/>
+      <Route path='/19' exact element={<Nineteen/>}/>
     </Routes>
     </div>
   );

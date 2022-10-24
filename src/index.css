@@ -66,6 +66,28 @@ body{
   color: #000;
   font-weight: 600;
 }
+.in-book {
+  top: 155px;
+  font-size: 10px;
+  left: calc(50% - 205px);
+  width: 170px;
+  line-height: .9;
+}
+.in-book>div {
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.in-book>div.selected:before {
+  content: "☑";
+  font-size: 15px;
+  color: green;
+}
+.in-book>div:before {
+  cursor: pointer;
+  content: "☐";
+  font-size: 15px;
+  color: green;
+}
 .multiple-cloud {
   cursor: pointer;
 }
@@ -86,9 +108,12 @@ body{
   background-color:#282c34
   }
   
-  .shkaf:hover{
-  border:1px solid rgba(0,0,0,.5)
-  }
+.shkaf:hover{
+  border: 1px solid rgba(0,0,0,.5)
+}
+.shkafi:hover{
+  border: 1px solid rgba(0,0,0,.5)
+}
 
 .linkButton{
   text-decoration: none;
@@ -167,6 +192,25 @@ button:hover{
   width: 58px;
   top: 19px;
 }
+
+.order-cloud.selected {
+  visibility: visible;
+  color: gold!important;
+  text-shadow: 0 0 5px #010101;
+}
+.order-cloud:hover {
+  color: #abe1a7;
+  text-shadow: 0 0 5px #010101;
+}
+.order-cloud {
+  cursor: pointer;
+  color: transparent;
+  font-size: 50px;
+  font-weight: 800;
+  text-align: center;
+  vertical-align: center;
+}
+
 
 /* @media (max-width: 980px){
   .App{

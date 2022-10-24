@@ -2,10 +2,12 @@ import { useNavigate } from 'react-router-dom';
 import doc1 from '../../images/doc1.jpg'
 
 
+
 function Second(){
     const navigate = useNavigate()
     const nextPage = () => {
         navigate("/3")
+        localStorage.setItem("step", 2)
     }
     return(
     <div>

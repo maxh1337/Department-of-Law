@@ -21,6 +21,7 @@ function First(){
 
     const nextPage = () => {
         navigate("/2");
+        localStorage.setItem("step", 1)
     }
 
     return(

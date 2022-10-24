@@ -14,21 +14,18 @@ function ChooseCharacter(){
     const [currentCharacter, setCurrentCharacter] = useState(0)
     const changeCharacterState1 = () => {
         setCurrentCharacter(1);
-
         btn1.classList.add("borderjs")
         btn2.classList.remove("borderjs")
         btn3.classList.remove("borderjs")
     }
     const changeCharacterState2 = () => {
         setCurrentCharacter(2);
-
         btn2.classList.add("borderjs")
         btn1.classList.remove("borderjs")
         btn3.classList.remove("borderjs")
     }
     const changeCharacterState3 = () => {
         setCurrentCharacter(3);
-
         btn3.classList.add("borderjs")
         btn1.classList.remove("borderjs")
         btn2.classList.remove("borderjs")
