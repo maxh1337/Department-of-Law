@@ -30,6 +30,9 @@ import Sixteen from '../16/16';
 import Seventeen from '../17/17';
 import Eighteen from '../18/18';
 import Nineteen from '../19/19';
+import Continue from '../continue/continue';
+import Load from '../load/load';
+import Save from '../save/save';
 
 function App(){
   const [scale, setScale] = useState(1.53);
@@ -54,6 +57,9 @@ const getScale = () => {
     <div className='App' style={{transform: 'scale(' + scale + ')'}}>
     <Routes>
       <Route path="/"exact element={<MainScreen/>}/>
+      <Route path='/continue' exact element={<Continue/>}/>
+      <Route path='/load' exact element={<Load/>}/>
+      <Route path='/save' exact element={<Save/>}/>
       <Route path="/start" exact element={<SecondScreen/>}/>
       <Route path="/choosecharacter" exact element={<ChooseCharacter/>}/>
       <Route path='/choosecharacter1' exact element={<ChooseCharacter1/>}/>
