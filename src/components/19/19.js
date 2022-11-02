@@ -23,6 +23,8 @@ function Nineteen(){
     const [redirect, setRedirect] = useState(false)
     const [redirect1, setRedirect1] = useState(1)
     const navigate = useNavigate()
+    const step = JSON.parse(localStorage.getItem("step"));
+    if (step !== 19) { localStorage.setItem("step", 19)};
     const goNext = () => {
         navigate("/20")
     }

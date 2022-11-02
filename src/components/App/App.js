@@ -1,8 +1,7 @@
 import '../../index.css';
 import './App.css';
 import React from 'react';
-import { useState } from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import MainScreen from '../MainScreen/MainScreen';
 import SecondScreen from '../SecondScreen/SecondScreen';
 import ChooseCharacter from '../ChooseCharacter/ChooseCharacter';
@@ -30,37 +29,43 @@ import Sixteen from '../16/16';
 import Seventeen from '../17/17';
 import Eighteen from '../18/18';
 import Nineteen from '../19/19';
-import Continue from '../continue/continue';
-import Load from '../load/load';
 import Save from '../save/save';
+import Load from '../load/load';
+import Continue from '../continue/continue';
 
-function App(){
-  const [scale, setScale] = useState(1.53);
+class App extends React.Component{
+  constructor(props) {
+    super(props);
 
+    window.addEventListener(`resize`, () => {
+        const scale = getScale();
+        this.setState({pageScale: scale});
+    }, false);
 
-  window.addEventListener(`resize`, () => {
-    // eslint-disable-next-line no-unused-vars
-    const scale = setScale(getScale());
-}, false);
+    const getScale = () => {
+        const clientWidth = document.documentElement.clientWidth;
+        const clientHeight = document.documentElement.clientHeight;
+        if (clientWidth > clientHeight) {
+            return clientHeight / 610;
+        } else {
+            return clientWidth / 640;
+        }
+    }
 
-const getScale = () => {
-  const clientWidth = document.documentElement.clientWidth;
-  const clientHeight = document.documentElement.clientHeight;
-  if (clientWidth > clientHeight) {
-      return clientHeight / 610;
-  } else {
-      return clientWidth / 640;
-  }
+    this.state = {
+        pageScale: getScale(),
+    };
 }
 
+render(){
   return (
-    <div className='App' style={{transform: 'scale(' + scale + ')'}}>
+    <div className='App' style={{transform: 'scale(' + this.state.pageScale + ')'}}>
     <Routes>
       <Route path="/"exact element={<MainScreen/>}/>
-      <Route path='/continue' exact element={<Continue/>}/>
-      <Route path='/load' exact element={<Load/>}/>
-      <Route path='/save' exact element={<Save/>}/>
       <Route path="/start" exact element={<SecondScreen/>}/>
+      <Route path='/save' exact element={<Save/>}/>
+      <Route path='/load' exact element={<Load/>}/>
+      <Route path='/continue' exact element={<Continue/>}/>
       <Route path="/choosecharacter" exact element={<ChooseCharacter/>}/>
       <Route path='/choosecharacter1' exact element={<ChooseCharacter1/>}/>
       <Route path='/choosecharacter2' exact element={<ChooseCharacter2/>}/>
@@ -75,7 +80,7 @@ const getScale = () => {
       <Route path='/6' exact element={<Six/>}/>
       <Route path='/7' exact element={<Seven/>}/>
       <Route path='/8' exact element={<Eight/>}/>
-      <Route path='/9' exact element={<Nine/>}/>
+      <Route path='/9' exact element={<Nine/>} />
       <Route path='/10' exact element={<Ten/>}/>
       <Route path='/11' exact element={<Eleven/>}/>
       <Route path='/12' exact element={<Twelve/>}/>
@@ -89,6 +94,7 @@ const getScale = () => {
     </Routes>
     </div>
   );
+}
 }
 
 export default App;

@@ -23,19 +23,18 @@ class Ten extends React.Component{
     toggleOrderMap = (e) => {
         const orderValue = +e.currentTarget.dataset.orderValue;
         const nextValue = Math.max(...Object.values(this.state.orderMap), 0) + 1;
-
+    
         if (orderValue === 1) {
             if (Object.keys(this.state.orderMap).length < 4) {
                 this.setState({
                     error: true
                 });
-                console.log("jija")
+                console.log("Ошибочка")
             } else {
                 this.setState({
                     redirect: true
                 })
             }
-
             return;
         };
         const newOrderMap = {...this.state.orderMap};
@@ -48,13 +47,12 @@ class Ten extends React.Component{
                 return null;
             });
             delete newOrderMap[orderValue];
-
         } else {
             newOrderMap[orderValue] = nextValue;
         }
-
         this.setState({orderMap: newOrderMap});
     }
+    
     render(){
         return(
             (this.state.redirect === false) ?
