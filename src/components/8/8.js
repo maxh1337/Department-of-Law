@@ -1,67 +1,110 @@
-import { useState } from "react";
+import p8 from "../../images/p8.jpg";
+import criminalcase from "../../images/buttons/criminal_case.png";
 import { useNavigate } from "react-router-dom";
-import doc2 from "../../images/doc2.jpg";
-import Criminal from "../criminal-case/criminal-case";
-import Error from "../error/error";
+import { useState } from "react";
+import "./8.css";
+export const choosenWay = {};
 
 function Eight() {
+  const [IsPopupOpened, setIsPopupOpened] = useState(false);
   const navigate = useNavigate();
-  const [error, setError] = useState(false);
-  const step = JSON.parse(localStorage.getItem("step"));
-  if (step !== 8) {
-    localStorage.setItem("step", 8);
-  }
-  const CheckAndRedirect = () => {
-    const inputValue = document.getElementById("inp1").value;
-    if (inputValue.toLowerCase() === "понятые") {
-      navigate("/9");
-      localStorage.setItem("step", 9);
+  const showPopup = () => {
+    const popup = document.querySelector(".criminal-case-modal");
+    if (IsPopupOpened === false) {
+      popup.classList.add("popup-show");
+      setIsPopupOpened(true);
     } else {
-      setError(true);
+      popup.classList.remove("popup-show");
+      setIsPopupOpened(false);
     }
   };
 
+  const nextPage1 = () => {
+    navigate("/10");
+    choosenWay.foo = 1;
+    localStorage.setItem("step", 3);
+  };
+  const nextPage2 = () => {
+    navigate("/10");
+    choosenWay.foo = 2;
+    localStorage.setItem("step", 3);
+  };
+  const nextPage3 = () => {
+    navigate("/9");
+    choosenWay.foo = 3;
+    localStorage.setItem("step", 3);
+  };
+  const nextPage4 = () => {
+    navigate("/9");
+    choosenWay.foo = 4;
+    localStorage.setItem("step", 3);
+  };
+
   return (
-    <>
-      {error === false ? (
-        <div>
-          <Criminal />
-          <img src={doc2} alt="5" width="640px" height="542px" />
-          <div
-            className="in-book"
-            style={{ textAlign: "center", marginTop: "50px" }}
-          >
-            Кто мне еще понадобится на омп?
-            <br />
-            <br />
-            <input placeholder="(Ответ)" id="inp1" />
-            <br />
-            <br />
-            <button onClick={CheckAndRedirect}>Ответить</button>
-          </div>
-        </div>
-      ) : (
-        <Error
-          text="Подумай!"
-          onClick1={() => {
-            setError(false);
-          }}
-          button1="Понятно"
-          newButton={
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://drive.google.com/file/d/1O6yiHCOluYvXHOBbVOBF3B_bI-JN9ufb/view"
-            >
-              {" "}
-              <button>Не понятно</button>
-            </a>
-          }
-          button2style={{ display: "none" }}
+    <div>
+      <a title="Материалы дела">
+        <img
+          alt="Материалы дела"
+          className="criminal-case"
+          src={criminalcase}
+          onClick={showPopup}
         />
-      )}
-    </>
+        <div className="criminal-case-modal">
+          <a
+            href="https://drive.google.com/file/d/1ogUDREkHV6kWEG-wtAslDpj2FrXNxiS1/view"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button>Заявление о преступлении</button>
+          </a>
+        </div>
+      </a>
+      <img src={p8} alt="2" width="640px" height="542px" />
+      <div
+        className="button-cloud"
+        style={{
+          position: "absolute",
+          top: "83px",
+          left: "calc(50% - 280px)",
+          width: "200px",
+          height: "70px",
+        }}
+        onClick={nextPage1}
+      ></div>
+      <div
+        className="button-cloud"
+        style={{
+          position: "absolute",
+          top: "87px",
+          left: "calc(50% + 10px)",
+          width: "240px",
+          height: "77px",
+        }}
+        onClick={nextPage2}
+      ></div>
+      <div
+        className="button-cloud"
+        style={{
+          position: "absolute",
+          top: "205px",
+          left: "calc(50% - 285px)",
+          width: "230px",
+          height: "85px",
+        }}
+        onClick={nextPage3}
+      ></div>
+      <div
+        className="button-cloud"
+        style={{
+          position: "absolute",
+          top: "250px",
+          left: "calc(50% - 10px)",
+          width: "270px",
+          height: "85px",
+        }}
+        onClick={nextPage4}
+      ></div>
+    </div>
   );
 }
-
 export default Eight;

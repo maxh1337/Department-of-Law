@@ -1,102 +1,59 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import { useState } from "react"
-import Criminal from "../criminal-case/criminal-case"
-import Error from "../error/error"
-import p29к from "../../images/p29к.jpg"
-import p29к2 from "../../images/p29к2.jpg"
-import p29к3 from "../../images/p29к3.jpg"
-import p29к4 from "../../images/p29к4.jpg"
-import p29к5 from "../../images/p29к5.jpg"
-import p29к6 from "../../images/p29к6.jpg"
-import { useNavigate } from "react-router-dom"
-const step = JSON.parse(localStorage.getItem("step"));
-if (step !== 15) { localStorage.setItem("step", 15)};
+import { useState } from "react";
+import p15 from "../../images/p15.jpg"
+import Error from "../error/error";
+import { Navigate } from "react-router-dom";
+import Criminal from "../ui/criminal-case/criminal-case";
 
-function Fifthteen() {
-    const [error, setError] = useState(0)
-    const [evidence, setEvidence] = useState(0)
-    const navigate = useNavigate()
-    const nextPage = () => {
-        navigate("/16")
+function Fifthteen(){
+    const way = JSON.parse(localStorage.getItem("mediumWay"));
+    var jija = 0;
+    const [redirect, setRedirect] = useState(false)
+    const [errorShowed, setErrorShowed] = useState(0);
+    const step = JSON.parse(localStorage.getItem("step"));
+
+    if (step !== 9) { localStorage.setItem("step", 9)}
+
+    const TriggerStyle = (e) => {
+        const cloud = e.currentTarget
+        if (cloud.classList.contains("selected")) {
+            cloud.classList.remove("selected")
+            cloud.dataset.status = 0
+            if (cloud.dataset.status && cloud.dataset.status !== 0) {
+                jija--;
+            }
+        } else {
+            cloud.classList.add("selected")
+            cloud.dataset.status = 1
+            if (cloud.dataset.status) {
+                jija++;
+            }
+            
+        }
+        if (jija === 4) {
+            setRedirect(true)
+        }
     }
     return(
+        <>
+        {(redirect === true) ? <Navigate to="/19"/> :
+        (errorShowed === 0) ?
         <div>
-            {(error === 0) ?
-            (evidence === 0) ?
-            <>
             <Criminal/>
-            <img width="640px" height="542px" src={p29к} alt="p29к"/>
-            <div className="Buttons">
-                <a data-to-page="p29к2"  onClick={() => {setEvidence(2)}} className="shkafi" style={{position: 'absolute', top: 400, left: 'calc(50% - 250px)', width: 100, height: 100, color: "white"}}>{""}</a>
-                <a data-to-page="p29к3"  onClick={() => {setEvidence(3)}} className="shkafi" style={{position: 'absolute', top: 450, left: 'calc(50% - 50px)', width: 100, height: 80, color: "white"}}>{""}</a>
-                <a data-to-page="p29к4"  onClick={() => {setEvidence(4)}} className="shkafi" style={{position: 'absolute', top: 400, left: 'calc(50% - 330px)', width: 50, height: 50, color: "white"}}>{""}</a>
-                <a data-to-page="p29к5"  onClick={() => {setEvidence(5)}} className="shkafi" style={{position: 'absolute', top: 480, left: 'calc(50% - -180px)', width: 50, height: 80, color: "white"}}>{""}</a>
-                <a data-to-page="p29к6"  onClick={() => {setEvidence(6)}} className="shkafi" style={{position: 'absolute', top: 450, left: 'calc(50% - 130px)', width: 80, height: 80, color: "white"}}>{""}</a>
-                <button onClick={nextPage}>Дальше</button>
-            </div>
-            </>
-            : (evidence === 2) ?
-            <>
-            <Criminal/>
-            <img width="640px" height="542px" src={p29к2} alt="p29к2"/>
-            <div className="Buttons">
-                <a data-to-page="p29к"  onClick={() => {setEvidence(0)}} className="shkafi" style={{position: 'absolute', top: 80, left: 'calc(50% - 150px)', width: 300, height: 80, color: "white"}}>{""}</a>
-                <a data-to-page="p29к2о"  onClick={() => {setError(1)}} className="shkafi" style={{position: 'absolute', top: 400, left: 'calc(50% - 250px)', width: 450, height: 80, color: "white"}}>{""}</a>
-            </div>
-            </>
-            : (evidence === 3) ?
-            <>
-            <Criminal/>
-            <img width="640px" height="542px" src={p29к3} alt="p29к3"/>
-            <div className="Buttons">
-                <a data-to-page="p29к"  onClick={() => {setEvidence(0)}} className="shkafi" style={{position: 'absolute', top: 80, left: 'calc(50% - 150px)', width: 300, height: 80, color: "white"}}>{""}</a>
-                <a data-to-page="p29к3о"  onClick={() => {setError(2)}} className="shkafi" style={{position: 'absolute', top: 400, left: 'calc(50% - 250px)', width: 450, height: 80, color: "white"}}>{""}</a>
-            </div>
-            </>
-            : (evidence === 4) ?
-            <>
-            <Criminal/>
-            <img width="640px" height="542px" src={p29к4} alt="p29к4"/>
-            <div className="Buttons">
-                <a data-to-page="p29к"  onClick={() => {setEvidence(0)}} className="shkafi" style={{position: 'absolute', top: 80, left: 'calc(50% - 150px)', width: 300, height: 80, color: "white"}}>{""}</a>
-                <a data-to-page="p29к4о"  onClick={() => {setError(3)}} className="shkafi" style={{position: 'absolute', top: 400, left: 'calc(50% - 250px)', width: 450, height: 80, color: "white"}}>{""}</a>
-            </div>
-            </>
-            : (evidence === 5) ?
-            <>
-            <Criminal/>
-            <img width="640px" height="542px" src={p29к5} alt="p29к5"/>
-            <div className="Buttons">
-                <a data-to-page="p29к"  onClick={() => {setEvidence(0)}} className="shkafi" style={{position: 'absolute', top: 80, left: 'calc(50% - 150px)', width: 300, height: 80, color: "white"}}>{""}</a>
-                <a data-to-page="p29к5о"  onClick={() => {setError(4)}} className="shkafi" style={{position: 'absolute', top: 200, left: 'calc(50% - 250px)', width: 450, height: 80, color: "white"}}>{""}</a>
-            </div>
-            </>
-            :
-            <>
-            <Criminal/>
-            <img width="640px" height="542px" src={p29к6} alt="p29к6"/>
-            <div className="Buttons">
-                <a data-to-page="p29к"  onClick={() => {setEvidence(0)}} className="shkafi" style={{position: 'absolute', top: 80, left: 'calc(50% - 150px)', width: 300, height: 80, color: "white"}}>{""}</a>
-                <a data-to-page="p29к6о"  onClick={() => {setError(4)}} className="shkafi" style={{position: 'absolute', top: 360, left: 'calc(50% - 250px)', width: 450, height: 80, color: "white"}}>{""}</a>
-            </div>
-            </>
-            : (error === 1) ? <Error text="Подумай!" onClick1={() => {setError(0)}} button1="Понятно"
-            newButton={<a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1KDVs9OQs31MTTIFIP-zIVe9hDEwONRhE/view"> <button>Не понятно</button></a>}
-            button2style={{display: "none"}}/>
-            : (error === 2) ? <Error text="Подумай!" onClick1={() => {setError(0)}} button1="Понятно"
-            newButton={<a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1KDVs9OQs31MTTIFIP-zIVe9hDEwONRhE/view"> <button>Не понятно</button></a>}
-            button2style={{display: "none"}}/>
-            : (error === 3) ? <Error text="Подумай!" onClick1={() => {setError(0)}} button1="Понятно"
-            newButton={<a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1KDVs9OQs31MTTIFIP-zIVe9hDEwONRhE/view"> <button>Не понятно</button></a>}
-            button2style={{display: "none"}}/>
-            : (error === 4) ? <Error text="Подумай!" onClick1={() => {setError(0)}} button1="Понятно"
-            newButton={<a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1KDVs9OQs31MTTIFIP-zIVe9hDEwONRhE/view"> <button>Не понятно</button></a>}
-            button2style={{display: "none"}}/>
-            : <Error text="Подумай!" onClick1={() => {setError(0)}} button1="Понятно"
-            newButton={<a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1KDVs9OQs31MTTIFIP-zIVe9hDEwONRhE/view"> <button>Не понятно</button></a>}
-            button2style={{display: "none"}}/>
-            }            
+            <img src={p15} alt="15" width="640px" height="542px"/>   
+            <div data-status="0" id="9-1" onClick={TriggerStyle}  className="multiple-cloud" style={{position: 'absolute', top: 35, left: 'calc(50% - 295px)', width: 192, height: 66}}></div>
+            <div data-status="0" id="9-2" onClick={TriggerStyle}  className="multiple-cloud" style={{position: 'absolute', top: 128, left: 'calc(50% - 185px)', width: 181, height: 95}}></div>
+            <div data-status="0" id="9-3" onClick={TriggerStyle}  className="multiple-cloud" style={{position: 'absolute', top: 219, left: 'calc(50% - 305px)', width: 200, height: 85}}></div>
+            <div data-status="0" id="9-4" onClick={TriggerStyle}  className="multiple-cloud" style={{position: 'absolute', top: 228, left: 'calc(50% - 60px)', width: 185, height: 95}}></div>
+            <div className="multiple-cloud" onClick={() => {setErrorShowed(1)}} style={{position: 'absolute', top: 24, left: 'calc(50% - 60px)', width: 180, height: 95}}></div>
+            <div className="multiple-cloud" onClick={() => {setErrorShowed(2)}} style={{position: 'absolute', top: 128, left: 'calc(50% + 60px)', width: 200, height: 85}}></div>
+            <div className="multiple-cloud" onClick={() => {setErrorShowed(3)}} style={{position: 'absolute', top: 318, left: 'calc(50% + 110px)', width: 185, height: 95}}></div>
         </div>
+        
+        : (errorShowed === 1) ? <Error onClick1={() => {setErrorShowed(0)}} text="Ты бы еще портативную рентгеновскую установку взял!" button1="Назад" button2style={{display : "none"}}/>
+        : (errorShowed === 2) ? <Error onClick1={() => {setErrorShowed(0)}} text="Ты бы еще портативную рентгеновскую установку взял!" button1="Назад" button2style={{display : "none"}}/>
+        : <Error onClick1={() => {setErrorShowed(0)}} text="Ты бы еще портативную рентгеновскую установку взял!" button1="Назад" button2style={{display : "none"}}/>
+        }
+        </>
     )
 }
 export default Fifthteen;

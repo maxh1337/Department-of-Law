@@ -9,22 +9,24 @@ import { useNavigate } from 'react-router-dom';
 function ChooseCharacter() {
     const navigate = useNavigate();
     const [currentCharacter, setCurrentCharacter] = useState(0)
-    const btn1 = document.getElementById("test1")
-    const btn2 = document.getElementById("test2")
-    const btn3 = document.getElementById("test3")
+    const [characterChosen, setCharacterChosen] = useState(0)
 
     const changeCharacterState = (e) => {
         const btn = e.currentTarget
-        if (btn.classList.contains("borderjs")) {
-            btn.classList.remove("borderjs")
+        let chosenCharacter = btn.value
+
+        if (characterChosen === 0 || chosenCharacter === characterChosen){
+            if (btn.classList.contains("borderjs")) {
+                btn.classList.remove("borderjs")
+                chosenCharacter = 0;
+                setCharacterChosen(0)
+            } else {
+                btn.classList.add("borderjs")
+                setCharacterChosen(chosenCharacter)
+            }
         } else {
-            btn1.classList.remove("borderjs")
-            btn2.classList.remove("borderjs")
-            btn3.classList.remove("borderjs")
-            btn.classList.add("borderjs")
-
+            console.log(chosenCharacter, characterChosen)
         }
-
         if (btn.value === "1") {
             setCurrentCharacter(1)
         } if (btn.value === "2") {
@@ -38,7 +40,7 @@ function ChooseCharacter() {
         if (currentCharacter === 1) { navigate("/choosecharacter1") }
         if (currentCharacter === 2) { navigate("/choosecharacter1") }
         if (currentCharacter === 3) { navigate("/choosecharacter1") }
-    }
+    } 
 
     return (
         <div>

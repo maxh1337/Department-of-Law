@@ -1,145 +1,130 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import p20 from "../../images/p20.jpg";
-import p21 from "../../images/p21.jpg";
-import p22 from "../../images/p22.jpg";
-import p22a from "../../images/p22a.jpg";
-import p23 from "../../images/p23.jpg";
-import p24 from "../../images/p24.jpg";
-import p25 from "../../images/p25.jpg";
-import p26 from "../../images/p26.jpg";
-import p26a from "../../images/p26a.jpg";
-import Criminal from "../criminal-case/criminal-case";
-const step = JSON.parse(localStorage.getItem("step"));
-if (step !== 11) {
-  localStorage.setItem("step", 11);
-}
+import doc1 from "../../images/doc1.jpg";
+import { choosenWay } from "../8/8";
+export const mediumWay = {};
 
 function Eleven() {
-  const [page, setPage] = useState(1);
+  const [way, setWay] = useState(0);
   const navigate = useNavigate();
+  const [nochangeLC, setNochangeLC] = useState(false);
+  const step = JSON.parse(localStorage.getItem("step"));
+
+  if (step !== 5) {
+    localStorage.setItem("step", 5);
+  }
+
+  const nextPage1 = () => {
+    mediumWay.foo = 1; //После этого ничего только протокол допроса
+    navigate("/12");
+    localStorage.setItem("mediumWay", 1);
+    localStorage.setItem("step", 6);
+  };
+  const nextPage2 = () => {
+    mediumWay.foo = 2;
+    setWay(1); // Только УЗОП
+    navigate("/12");
+    localStorage.setItem("mediumWay", 2);
+    localStorage.setItem("step", 6);
+  };
+  const nextPage3 = () => {
+    mediumWay.foo = 3;
+    setWay(1); // Рапорт и объяснение
+    choosenWay.foo = 4;
+    localStorage.setItem("mediumWay", 3);
+    localStorage.setItem("step", 6);
+    setNochangeLC(true);
+  };
+  const nextPage4 = () => {
+    mediumWay.foo = 4;
+    setWay(1); // Объяснение
+    navigate("/12");
+    localStorage.setItem("step", 6);
+    if (nochangeLC === false) {
+      localStorage.setItem("mediumWay", 4);
+    }
+  };
+  console.log(choosenWay);
   return (
-    <div>
-      <Criminal />
-      {page === 1 ? (
-        <>
-          <img width="640px" height="542px" src={p20} alt="p20" />
-          <div className="Buttons">
-            <button
-              onClick={() => {
-                setPage(2);
-              }}
-            >
-              Дальше
-            </button>
+    <>
+      {choosenWay.foo === 1 ? (
+        <div>
+          <img src={doc1} alt="5" width="640px" height="542px" />
+          <div className="doc-content">
+            <div className="Buttons">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://drive.google.com/file/d/1pjE-OOjKm-Cj78MKxQJqr5UiEXChIxAF/view"
+              >
+                <button>Открыть протокол допроса</button>
+              </a>
+              <br />
+              <br />
+              <button onClick={nextPage1}>Продолжить</button>
+            </div>
           </div>
-        </>
-      ) : page === 2 ? (
-        <>
-          <img width="640px" height="542px" src={p21} alt="p21" />
-          <div className="Buttons">
-            <button
-              onClick={() => {
-                setPage(3);
-              }}
-            >
-              Дальше
-            </button>
+        </div>
+      ) : choosenWay.foo === 2 ? (
+        <div>
+          <img src={doc1} alt="5" width="640px" height="542px" />
+          <div className="doc-content">
+            <div className="Buttons">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://drive.google.com/file/d/1p5y9GCvhO-zizn7QQAFNkAJLZNZvGYZG/view"
+              >
+                <button>Открыть протокол УЗОП</button>
+              </a>
+              <br />
+              <br />
+              <button onClick={nextPage2}>Продолжить</button>
+            </div>
           </div>
-        </>
-      ) : page === 3 ? (
-        <>
-          <img width="640px" height="542px" src={p22} alt="p22" />
-          <div className="Buttons">
-            <button
-              onClick={() => {
-                setPage(4);
-              }}
-            >
-              Дальше
-            </button>
+        </div>
+      ) : choosenWay.foo === 3 ? (
+        <div>
+          <img src={doc1} alt="5" width="640px" height="542px" />
+          <div className="doc-content">
+            <div className="Buttons">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://drive.google.com/file/d/1vMlOar6blg4XyuUdUvM2UYXwNP--13F7/view"
+              >
+                <button>
+                  Открыть рапорт об обнаружении признаков преступления
+                </button>
+              </a>
+              <br />
+              <br />
+              <button onClick={nextPage3}>Продолжить</button>
+            </div>
           </div>
-        </>
-      ) : page === 4 ? (
-        <>
-          <img width="640px" height="542px" src={p22a} alt="p22a" />
-          <div className="Buttons">
-            <button
-              onClick={() => {
-                setPage(5);
-              }}
-            >
-              Дальше
-            </button>
+        </div>
+      ) : (
+        // : (way === 4) ?
+        <div>
+          <img src={doc1} alt="5" width="640px" height="542px" />
+          <div className="doc-content">
+            <div className="Buttons">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://drive.google.com/file/d/1f3E5XSKmwWhc25xdmgKMcrhdhn6ER_y1/view"
+              >
+                <button>Открыть объяснение гражданки Синичкиной</button>
+              </a>
+              <br />
+              <br />
+              <button onClick={nextPage4}>Продолжить</button>
+            </div>
           </div>
-        </>
-      ) : page === 5 ? (
-        <>
-          <img width="640px" height="542px" src={p23} alt="p23" />
-          <div className="Buttons">
-            <button
-              onClick={() => {
-                setPage(6);
-              }}
-            >
-              Дальше
-            </button>
-          </div>
-        </>
-      ) : page === 6 ? (
-        <>
-          <img width="640px" height="542px" src={p24} alt="p24" />
-          <div className="Buttons">
-            <button
-              onClick={() => {
-                setPage(7);
-              }}
-            >
-              Дальше
-            </button>
-          </div>
-        </>
-      ) : page === 7 ? (
-        <>
-          <img width="640px" height="542px" src={p25} alt="p25" />
-          <div className="Buttons">
-            <button
-              onClick={() => {
-                setPage(8);
-              }}
-            >
-              Дальше
-            </button>
-          </div>
-        </>
-      ) : page === 8 ? (
-        <>
-          <img width="640px" height="542px" src={p26} alt="p26" />
-          <div className="Buttons">
-            <button
-              onClick={() => {
-                setPage(9);
-              }}
-            >
-              Дальше
-            </button>
-          </div>
-        </>
-      ) : page === 9 ? (
-        <>
-          <img width="640px" height="542px" src={p26a} alt="p26a" />
-          <div className="Buttons">
-            <button
-              onClick={() => {
-                navigate("/12");
-              }}
-            >
-              Дальше
-            </button>
-          </div>
-        </>
-      ) : null}
-    </div>
+        </div>
+      )}
+    </>
   );
 }
+
 export default Eleven;

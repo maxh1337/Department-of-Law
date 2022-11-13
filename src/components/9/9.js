@@ -1,59 +1,112 @@
 import { useState } from "react";
-import p15 from "../../images/p15.jpg"
+import { useNavigate } from "react-router-dom";
+import criminalcase from "../../images/buttons/criminal_case.png";
+import doc1 from "../../images/doc1.jpg";
 import Error from "../error/error";
-import { Navigate, useNavigate } from "react-router-dom";
-import Criminal from "../criminal-case/criminal-case";
 
-function Nine(){
-    const way = JSON.parse(localStorage.getItem("mediumWay"));
-    var jija = 0;
-    const [redirect, setRedirect] = useState(false)
-    const [errorShowed, setErrorShowed] = useState(0);
-    const step = JSON.parse(localStorage.getItem("step"));
+function Nine() {
+  const [IsPopupOpened, setIsPopupOpened] = useState(false);
+  const navigate = useNavigate();
+  const [error, setError] = useState(false);
 
-    if (step !== 9) { localStorage.setItem("step", 9)}
-
-    const TriggerStyle = (e) => {
-        const cloud = e.currentTarget
-        if (cloud.classList.contains("selected")) {
-            cloud.classList.remove("selected")
-            cloud.dataset.status = 0
-            if (cloud.dataset.status && cloud.dataset.status !== 0) {
-                jija--;
-            }
-        } else {
-            cloud.classList.add("selected")
-            cloud.dataset.status = 1
-            if (cloud.dataset.status) {
-                jija++;
-            }
-            
-        }
-        if (jija === 4) {
-            setRedirect(true)
-        }
+  const showPopup = () => {
+    const popup = document.querySelector(".criminal-case-modal");
+    if (IsPopupOpened === false) {
+      popup.classList.add("popup-show");
+      setIsPopupOpened(true);
+    } else {
+      popup.classList.remove("popup-show");
+      setIsPopupOpened(false);
     }
-    return(
-        <>
-        {(redirect === true) ? <Navigate to="/10"/> :
-        (errorShowed === 0) ?
+  };
+  const CheckAndRedirect = () => {
+    const inputValue = document.getElementById("inp1").value;
+    if (
+      inputValue === "Ст. 51 Конституции РФ" ||
+      inputValue === "ст. 51 Конституции РФ" ||
+      inputValue === "Статья 51 Конституции РФ" ||
+      inputValue === "статья 51 Конституции РФ" ||
+      inputValue === "Ст. 51 Конституции России" ||
+      inputValue === "ст. 51 Конституции России" ||
+      inputValue === "Статья 51 Конституции России" ||
+      inputValue === "статья 51 Конституции России" ||
+      inputValue === "Ст. 51 Конституции Российской Федерации" ||
+      inputValue === "ст. 51 Конституции Российской Федерации" ||
+      inputValue === "Статья 51 Конституции Российской Федерации" ||
+      inputValue === "статья 51 Конституции Российской Федерации"
+    ) {
+      navigate("/10");
+      localStorage.setItem("step", 4);
+    } else {
+      setError(true);
+    }
+  };
+  const setErrorNone = () => {
+    setError(false);
+  };
+
+  return (
+    <>
+      {error === false ? (
         <div>
-            <Criminal/>
-            <img src={p15} alt="15" width="640px" height="542px"/>   
-            <div data-status="0" id="9-1" onClick={TriggerStyle}  className="multiple-cloud" style={{position: 'absolute', top: 35, left: 'calc(50% - 295px)', width: 192, height: 66}}></div>
-            <div data-status="0" id="9-2" onClick={TriggerStyle}  className="multiple-cloud" style={{position: 'absolute', top: 128, left: 'calc(50% - 185px)', width: 181, height: 95}}></div>
-            <div data-status="0" id="9-3" onClick={TriggerStyle}  className="multiple-cloud" style={{position: 'absolute', top: 219, left: 'calc(50% - 305px)', width: 200, height: 85}}></div>
-            <div data-status="0" id="9-4" onClick={TriggerStyle}  className="multiple-cloud" style={{position: 'absolute', top: 228, left: 'calc(50% - 60px)', width: 185, height: 95}}></div>
-            <div className="multiple-cloud" onClick={() => {setErrorShowed(1)}} style={{position: 'absolute', top: 24, left: 'calc(50% - 60px)', width: 180, height: 95}}></div>
-            <div className="multiple-cloud" onClick={() => {setErrorShowed(2)}} style={{position: 'absolute', top: 128, left: 'calc(50% + 60px)', width: 200, height: 85}}></div>
-            <div className="multiple-cloud" onClick={() => {setErrorShowed(3)}} style={{position: 'absolute', top: 318, left: 'calc(50% + 110px)', width: 185, height: 95}}></div>
+          <img width="640" height="542" src={doc1} alt="p9"></img>
+          <a title="Материалы дела">
+            <img
+              alt="Материалы дела"
+              className="criminal-case"
+              src={criminalcase}
+              onClick={showPopup}
+            />
+            <div className="criminal-case-modal">
+              <a
+                href="https://drive.google.com/file/d/1ogUDREkHV6kWEG-wtAslDpj2FrXNxiS1/view"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button>Заявление о преступлении</button>
+              </a>
+            </div>
+          </a>
+          <div className="doc-content" name="form1">
+            Объяснение:
+            <br />
+            Следователь отдела полиции № 5 СУ УМВД России лейтенант юстиции
+            Епишев И.А. принял объяснение от гражданки Синичкиной Светланы
+            Геннадьевны 08 ноября 1970 г.р., прож.: г. Умск, ул. Светлая, д.
+            71А, кв. 32, индивидуальный предприниматель, моб. тел.:
+            8(333)333-33-33. <br />
+            <input
+              placeholder="Заполните пропуск"
+              style={{ width: "180px" }}
+              id="inp1"
+            ></input>
+            ;мне разъяснена и понятна.
+            <br />
+            ...
+            <br />
+            <br />
+            <button onClick={CheckAndRedirect}>Проверить</button>
+          </div>
         </div>
-        
-        : (errorShowed === 1) ? <Error onClick1={() => {setErrorShowed(0)}} text="Ты бы еще портативную рентгеновскую установку взял!" button1="Назад" button2style={{display : "none"}}/>
-        : (errorShowed === 2) ? <Error onClick1={() => {setErrorShowed(0)}} text="Ты бы еще портативную рентгеновскую установку взял!" button1="Назад" button2style={{display : "none"}}/>
-        : <Error onClick1={() => {setErrorShowed(0)}} text="Ты бы еще портативную рентгеновскую установку взял!" button1="Назад" button2style={{display : "none"}}/>
-        }
-        </>
-    )
+      ) : (
+        <Error
+          onClick1={setErrorNone}
+          button1="Понятно"
+          text="Статья 51 Конституции РФ: «Никто не обязан свидетельствовать против себя самого, своего супруга и близких родственников, круг которых определяется федеральным законом»"
+          button2style={{ display: "none" }}
+          newButton={
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://drive.google.com/file/d/1xNBuRjMF6WrEE_I39d5oCKwZHIRm9JgW/view"
+            >
+              <button>Не понятно</button>
+            </a>
+          }
+        />
+      )}
+    </>
+  );
 }
+
 export default Nine;

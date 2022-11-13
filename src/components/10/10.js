@@ -1,74 +1,154 @@
-import React from "react";
-import {Navigate} from "react-router-dom";
-import Criminal from "../criminal-case/criminal-case";
+import p10 from "../../images/p10.jpg";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import Error from "../error/error";
-import p17 from "../../images/p17.jpg"
-const step = JSON.parse(localStorage.getItem("step"));
-if (step !== 10) { localStorage.setItem("step", 10)};
+import criminalcase from "../../images/buttons/criminal_case.png";
 
+function Ten() {
+  const [IsPopupOpened, setIsPopupOpened] = useState(false);
+  const [errorShowed, setErrorShowed] = useState(false);
+  var jija = 0;
+  const navigate = useNavigate();
 
-class Ten extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            orderMap: {},
-            error: false,
-            redirect: false
-        }
-        const nextValue = Math.max(...Object.values(this.state.orderMap), 0) + 1;
-        this.nextValue = nextValue;
-        this.error = this.state.error;
+  const showPopup = () => {
+    const popup = document.querySelector(".criminal-case-modal");
+    if (IsPopupOpened === false) {
+      popup.classList.add("popup-show");
+      setIsPopupOpened(true);
+    } else {
+      popup.classList.remove("popup-show");
+      setIsPopupOpened(false);
     }
-
-    toggleOrderMap = (e) => {
-        const orderValue = +e.currentTarget.dataset.orderValue;
-        const nextValue = Math.max(...Object.values(this.state.orderMap), 0) + 1;
-    
-        if (orderValue === 1) {
-            if (Object.keys(this.state.orderMap).length < 4) {
-                this.setState({
-                    error: true
-                });
-                console.log("Ошибочка")
-            } else {
-                this.setState({
-                    redirect: true
-                })
-            }
-            return;
-        };
-        const newOrderMap = {...this.state.orderMap};
-        if (this.state.orderMap[orderValue]) {
-            const currentOrder = this.state.orderMap[orderValue];
-            Object.keys(newOrderMap).map((key) => {
-                if (newOrderMap[key] > currentOrder) {
-                    newOrderMap[key] -= 1;
-                }
-                return null;
-            });
-            delete newOrderMap[orderValue];
-        } else {
-            newOrderMap[orderValue] = nextValue;
-        }
-        this.setState({orderMap: newOrderMap});
+  };
+  const TriggerStyle = (e) => {
+    const cloud = e.currentTarget;
+    if (cloud.classList.contains("selected")) {
+      cloud.classList.remove("selected");
+      cloud.dataset.status = 0;
+      if (cloud.dataset.status && cloud.dataset.status !== 0) {
+        jija--;
+      }
+    } else {
+      cloud.classList.add("selected");
+      cloud.dataset.status = 1;
+      if (cloud.dataset.status) {
+        jija++;
+      }
     }
-    
-    render(){
-        return(
-            (this.state.redirect === false) ?
-            (this.state.error === false) ? 
-            <div>
-                <Criminal/>
-                <img src={p17} alt="15" width="640px" height="542px"/>
-                <div data-order-value="1" onClick={this.toggleOrderMap} className={"order-cloud" + (this.state.orderMap[1] ? ' selected' : '')} style={{position: 'absolute', top: 53, left: 'calc(50% - 285px)', width: 242, height: 70}}>{this.state.orderMap[1] ? this.state.orderMap[1] : this.nextValue}</div>
-                <div data-order-value="2" onClick={this.toggleOrderMap} className={"order-cloud" + (this.state.orderMap[2] ? ' selected' : '')} style={{position: 'absolute', top: 37, left: 'calc(50% + 45px)', width: 210, height: 70}}>{this.state.orderMap[2] ? this.state.orderMap[2] : this.nextValue}</div>
-                <div data-order-value="3" onClick={this.toggleOrderMap} className={"order-cloud" + (this.state.orderMap[3] ? ' selected' : '')} style={{position: 'absolute', top: 165, left: 'calc(50% - 88px)', width: 202, height: 70}}>{this.state.orderMap[3] ? this.state.orderMap[3] : this.nextValue}</div>
-                <div data-order-value="4" onClick={this.toggleOrderMap} className={"order-cloud" + (this.state.orderMap[4] ? ' selected' : '')} style={{position: 'absolute', top: 274, left: 'calc(50% - 255px)', width: 232, height: 80}}>{this.state.orderMap[4] ? this.state.orderMap[4] : this.nextValue}</div>
-                <div data-order-value="5" onClick={this.toggleOrderMap} className={"order-cloud" + (this.state.orderMap[5] ? ' selected' : '')} style={{position: 'absolute', top: 290, left: 'calc(50% + 73px)', width: 210, height: 70}}>{this.state.orderMap[5] ? this.state.orderMap[5] : this.nextValue}</div>
+  };
+  const GoBack = () => {
+    setErrorShowed(false);
+  };
+  const nextPage = () => {
+    if (jija === 5) {
+      navigate("/11");
+      localStorage.setItem("step", 5);
+    } else {
+      setErrorShowed(true);
+    }
+  };
+
+  return (
+    <>
+      {errorShowed === false ? (
+        <div>
+          <a title="Материалы дела">
+            <img
+              alt="Материалы дела"
+              className="criminal-case"
+              src={criminalcase}
+              onClick={showPopup}
+            />
+            <div className="criminal-case-modal" id="criminal-case-modal">
+              <a
+                href="https://drive.google.com/file/d/1ogUDREkHV6kWEG-wtAslDpj2FrXNxiS1/view"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button>Заявление о преступлении</button>
+              </a>
             </div>
-            : <Error text="Ты хочешь раскрыть преступление по горячим следам?" button1="назад" button2style={{display: "none"}} onClick1={() => {this.setState({error: false})}}/>
-            : <Navigate to="/11"/>
-        )
-    }
+          </a>
+          <img src={p10} alt="2" width="640px" height="542px" />
+          <div className="Buttons">
+            <button onClick={nextPage}>Продолжить</button>
+          </div>
+          <div
+            data-status="0"
+            className="multiple-cloud"
+            id="4-1"
+            onClick={TriggerStyle}
+            style={{
+              position: "absolute",
+              top: "53px",
+              left: "calc(50% - 312px)",
+              width: "232px",
+              height: "75px",
+            }}
+          ></div>
+          <div
+            data-status="0"
+            className="multiple-cloud"
+            id="4-2"
+            onClick={TriggerStyle}
+            style={{
+              position: "absolute",
+              top: "38px",
+              left: "calc(50% - 44px)",
+              width: "260px",
+              height: "90px",
+            }}
+          ></div>
+          <div
+            data-status="0"
+            className="multiple-cloud"
+            id="4-3"
+            onClick={TriggerStyle}
+            style={{
+              position: "absolute",
+              top: "157px",
+              left: "calc(50% - 275px)",
+              width: "260px",
+              height: "95px",
+            }}
+          ></div>
+          <div
+            data-status="0"
+            className="multiple-cloud"
+            id="4-4"
+            onClick={TriggerStyle}
+            style={{
+              position: "absolute",
+              top: "160px",
+              left: "calc(50% + 45px)",
+              width: "220px",
+              height: "85px",
+            }}
+          ></div>
+          <div
+            data-status="0"
+            className="multiple-cloud"
+            id="4-5"
+            onClick={TriggerStyle}
+            style={{
+              position: "absolute",
+              top: "278px",
+              left: "calc(50% - 110px)",
+              width: "295px",
+              height: "90px",
+            }}
+          ></div>
+        </div>
+      ) : (
+        <Error
+          text="И ЭТО ВСЕ, ЧТО ТЫ ПОМНИШЬ ?"
+          button1="Назад"
+          button2style={{ display: "none" }}
+          onClick1={GoBack}
+        />
+      )}
+    </>
+  );
 }
+
 export default Ten;

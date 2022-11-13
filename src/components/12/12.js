@@ -1,61 +1,98 @@
-import { render } from "@testing-library/react";
-import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
-import p27 from "../../images/p27.jpg"
+import { useNavigate } from "react-router-dom";
+import p12 from "../../images/p12.jpg";
+import { useState } from "react";
 import Error from "../error/error";
-const step = JSON.parse(localStorage.getItem("step"));
-if (step !== 12) { localStorage.setItem("step", 12)};
+import Criminal from "../ui/criminal-case/criminal-case";
 
-class Twelve extends React.Component{
-    constructor(props){
-        super(props)
-        this.state = {
-            multiSet: new Set(),
-            orderMap: {},
-            redirect: false,
-            error: false
-        }
-    }
-    toggleMultiSet = (e) => {
-        const value = +e.currentTarget.dataset.multiValue;
-        const cloneSet = new Set(this.state.multiSet);
-        if (cloneSet.has(value)) {
-            cloneSet.delete(value);
-        } else {
-            cloneSet.add(value);
-        }
-        this.setState({multiSet: cloneSet});
-    }
-    checkSet = () => {
-        if (this.state.multiSet.has(2) && this.state.multiSet.has(3) && this.state.multiSet.size === 2) {
-            this.setState({
-                redirect: true
-            })
-        }
-        else {
-            this.setState({
-                error: true
-            })
-        }
-    }
-render(){
-    return(
-        (this.state.redirect === false) ?
-        (this.state.error === false) ? 
+function Twelve() {
+  const way = JSON.parse(localStorage.getItem("mediumWay"));
+  const navigate = useNavigate();
+  const [error, setError] = useState(false);
+  const step = JSON.parse(localStorage.getItem("step"));
+
+  if (step !== 6) {
+    localStorage.setItem("step", 6);
+  }
+  const nextPage1 = () => {
+    navigate("/14");
+    localStorage.setItem("step", 7);
+  };
+  const nextPage = () => {
+    setError(true);
+  };
+  const setErrorNone = () => {
+    setError(false);
+  };
+  return (
+    <>
+      {" "}
+      {error === false ? (
         <div>
-            <img width="640px" height="542px" src={p27} alt="p27"/>
-            <div className="Buttons">
-                    <button onClick={this.checkSet}>Дальше</button>
-            </div>
-            <div data-multi-value="1" onClick={this.toggleMultiSet}  className={"multiple-cloud" + (this.state.multiSet.has(1) ? ' selected' : '')} style={{position: 'absolute', top: 65, left: 'calc(50% - 250px)', width: 80, height: 75}}>&nbsp;</div>
-            <div data-multi-value="2" onClick={this.toggleMultiSet}  className={"multiple-cloud" + (this.state.multiSet.has(2) ? ' selected' : '')} style={{position: 'absolute', top: -5, left: 'calc(50% - 135px)', width: 80, height: 90}}>&nbsp;</div>
-            <div data-multi-value="3" onClick={this.toggleMultiSet}  className={"multiple-cloud" + (this.state.multiSet.has(3) ? ' selected' : '')} style={{position: 'absolute', top: -5, left: 'calc(50% - 20px)', width: 80, height: 75}}>&nbsp;</div>
-            <div data-multi-value="4" onClick={this.toggleMultiSet}  className={"multiple-cloud" + (this.state.multiSet.has(4) ? ' selected' : '')} style={{position: 'absolute', top: 105, left: 'calc(50% - -90px)', width: 80, height: 90}}>&nbsp;</div>
-            <div data-multi-value="5" onClick={this.toggleMultiSet}  className={"multiple-cloud" + (this.state.multiSet.has(5) ? ' selected' : '')} style={{position: 'absolute', top: 45, left: 'calc(50% - -210px)', width: 80, height: 90}}>&nbsp;</div>
+          <Criminal />
+          <img src={p12} alt="2" width="640px" height="542px" />
+          <div
+            className="button-cloud"
+            style={{
+              position: "absolute",
+              top: "98px",
+              left: "calc(50% - 268px)",
+              width: "200px",
+              height: "70px",
+            }}
+            onClick={nextPage}
+          ></div>
+          <div
+            className="button-cloud"
+            style={{
+              position: "absolute",
+              top: "130px",
+              left: "calc(50% + 10px)",
+              width: "240px",
+              height: "77px",
+            }}
+            onClick={nextPage}
+          ></div>
+          <div
+            className="button-cloud"
+            style={{
+              position: "absolute",
+              top: "213px",
+              left: "calc(50% - 270px)",
+              width: "230px",
+              height: "85px",
+            }}
+            onClick={nextPage}
+          ></div>
+          <div
+            className="button-cloud"
+            style={{
+              position: "absolute",
+              top: "271px",
+              left: "calc(50% + 20px)",
+              width: "270px",
+              height: "85px",
+            }}
+            onClick={nextPage1}
+          ></div>
         </div>
-        : <Error text="Подумай!" button1="назад" button2style={{display: "none"}} onClick1={() => {this.setState({error: false})}}/>
-        : <Navigate to="/13"/>
-    )
-}
+      ) : (
+        <Error
+          onClick1={setErrorNone}
+          button1="Понятно"
+          text="Статья 144 УПК РФ"
+          button2style={{ display: "none" }}
+          newButton={
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://drive.google.com/file/d/1xNBuRjMF6WrEE_I39d5oCKwZHIRm9JgW/view"
+            >
+              <button>Не понятно</button>
+            </a>
+          }
+        />
+      )}
+    </>
+  );
 }
 export default Twelve;

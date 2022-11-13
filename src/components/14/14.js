@@ -1,103 +1,66 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react"
-import p29 from "../../images/p29.jpg"
-import p29г from "../../images/p29г.jpg"
-import p29а from "../../images/p29а.jpg"
-import p29б from "../../images/p29б.jpg"
-import p29д from "../../images/p29д.jpg"
-import p29в from "../../images/p29в.jpg"
-import Criminal from "../criminal-case/criminal-case"
-import Error from "../error/error"
+import doc2 from "../../images/doc2.jpg"
 import { useNavigate } from "react-router-dom"
-const step = JSON.parse(localStorage.getItem("step"));
-if (step !== 14) { localStorage.setItem("step", 14)};
+import Error from "../error/error"
+import Criminal from "../ui/criminal-case/criminal-case"
 
-function Fourteen(){
-    const [error, setError] = useState(0)
-    const [evidence, setEvidence] = useState(0)
+function Fourteen() {
+    const way = JSON.parse(localStorage.getItem("mediumWay"))
+    const step = JSON.parse(localStorage.getItem("step"));
     const navigate = useNavigate()
-    const nextPage = () => {
-        navigate("/15")
-    }
-    return(
-        <div>
-            {(error === 0) ?
-            (evidence === 0) ?
-            <>
-            <Criminal/>
-            <img width="640px" height="542px" src={p29} alt="p29"/>
-            <div className="Buttons">
-                <a data-to-page="p29г" onClick={() => {setEvidence(1)}} className="shkafi" style={{position: 'absolute', top: 110, left: 'calc(50% - 250px)', width: 100, height: 100, color: "white"}}></a>
-                <a data-to-page="p29а" onClick={() => {setEvidence(2)}} className="shkafi" style={{position: 'absolute', top: 450, left: 'calc(50% - 50px)', width: 100, height: 80, color: "white"}}></a>
-                <a data-to-page="p29д" onClick={() => {setEvidence(3)}} className="shkafi" style={{position: 'absolute', top: 400, left: 'calc(50% - 285px)', width: 100, height: 100, color: "white"}}></a>
-                <a data-to-page="p29в" onClick={() => {setEvidence(4)}} className="shkafi" style={{position: 'absolute', top: 170, left: 'calc(50% - -60px)', width: 50, height: 80, color: "white"}}></a>
-                <a data-to-page="p29б" onClick={() => {setEvidence(5)}} className="shkafi" style={{position: 'absolute', top: 380, left: 'calc(50% - -50px)', width: 80, height: 80, color: "white"}}></a>
-                <button onClick={nextPage}>Дальше</button>
-            </div>
-            </>
-            : (evidence === 1) ?
-            <>
-            <div>
-                <Criminal/>
-                <img width="640px" height="542px" src={p29г} alt="p29г"/>
-                <a onClick={() => {setEvidence(0)}} className="shkafi" style={{position: 'absolute', top: 70, left: 'calc(50% - 95px)', width: 350, height: 80, color: "white"}}>{""}</a>
-                <a onClick={() => {setError(1)}} className="shkafi" style={{position: 'absolute', top: 300, left: 'calc(50% - 90px)', width: 350, height: 80, color: "white"}}>{""}</a>
-            </div>
-            </>
-            : (evidence === 2) ?
-            <>
-            <div>
-                <Criminal/>
-                <img width="640px" height="542px" src={p29а} alt="p29а"/>
-                <a onClick={() => {setEvidence(0)}} className="shkafi" style={{position: 'absolute', top: 70, left: 'calc(50% - 270px)', width: 350, height: 80, color: "white"}}>{""}</a>
-                <a onClick={() => {setError(2)}} className="shkafi" style={{position: 'absolute', top: 300, left: 'calc(50% - 265px)', width: 350, height: 80, color: "white"}}>{""}</a>
-            </div>
-            </>
-            : (evidence === 3) ?
-            <>
-            <div>
-                <Criminal/>
-                <img width="640px" height="542px" src={p29д} alt="p29д"/>
-                <a onClick={() => {setEvidence(0)}} className="shkafi" style={{position: 'absolute', top: 70, left: 'calc(50% - 90px)', width: 350, height: 80, color: "white"}}>{""}</a>
-                <a onClick={() => {setError(3)}} className="shkafi" style={{position: 'absolute', top: 300, left: 'calc(50% - 95px)', width: 350, height: 80, color: "white"}}>{""}</a>
-            </div>
-            </>
-            : (evidence === 4) ?
-            <>
-            <div>
-                <Criminal/>
-                <img width="640px" height="542px" src={p29в} alt="p29в"/>
-                <a onClick={() => {setError(4)}} className="shkafi" style={{position: 'absolute', top: 70, left: 'calc(50% - 270px)', width: 350, height: 80, color: "white"}}>{""}</a>
-                <a onClick={() => {setEvidence(0)}} className="shkafi" style={{position: 'absolute', top: 300, left: 'calc(50% - 265px)', width: 350, height: 80, color: "white"}}>{""}</a>
-            </div>
-            </>
-            : 
-            <>
-            <div>
-                <Criminal/>
-                <img width="640px" height="542px" src={p29б} alt="p29б"/>
-                <a onClick={() => {setEvidence(0)}} className="shkafi" style={{position: 'absolute', top: 70, left: 'calc(50% - 270px)', width: 350, height: 80, color: "white"}}>{""}</a>
-                <a onClick={() => {setError(5)}} className="shkafi" style={{position: 'absolute', top: 300, left: 'calc(50% - 265px)', width: 350, height: 80, color: "white"}}>{""}</a>
-            </div>
-            </>
-            : (error === 1) ? <Error text="Подумай!" onClick1={() => {setError(0)}} button1="Понятно"
-            newButton={<a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1lMDhOuE5Wb75TV5G4OxRB7sRuNyW7P16/view"> <button>Не понятно</button></a>}
-            button2style={{display: "none"}}/>
-            : (error === 2) ? <Error text="Подумай!" onClick1={() => {setError(0)}} button1="Понятно"
-            newButton={<a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1xWvu9AnfNT_fRCiEVAUXXR0XEN0AyKD6/view"> <button>Не понятно</button></a>}
-            button2style={{display: "none"}}/>
-            : (error === 3) ? <Error text="Подумай!" onClick1={() => {setError(0)}} button1="Понятно"
-            newButton={<a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1KDVs9OQs31MTTIFIP-zIVe9hDEwONRhE/view"> <button>Не понятно</button></a>}
-            button2style={{display: "none"}}/>
-            : (error === 4) ? <Error text="Подумай!" onClick1={() => {setError(0)}} button1="Понятно"
-            newButton={<a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1e8gLT2Yg_LoFf7wgnMIYvtDTE-xzyQrP/view"> <button>Не понятно</button></a>}
-            button2style={{display: "none"}}/>
-            : <Error text="Подумай!" onClick1={() => {setError(0)}} button1="Понятно"
-            newButton={<a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1jOdo_sb3Osmz-xrjimoenvbjNpaENJlb/view"> <button>Не понятно</button></a>}
-            button2style={{display: "none"}}/>
+    var jija = 0;
+    const [errorShowed, setErrorShowed] = useState(0)
+    
+
+    if (step !== 7) { localStorage.setItem("step", 7)}
+    const TriggerStyle = (e) => {
+        const cloud = e.currentTarget
+        if (cloud.classList.contains("selected")) {
+            cloud.classList.remove("selected")
+            cloud.dataset.status = 0
+            if (cloud.dataset.status && cloud.dataset.status !== 0) {
+                jija--;
             }
+        } else {
+            cloud.classList.add("selected")
+            cloud.dataset.status = 1
+            if (cloud.dataset.status) {
+                jija++;
+            }
+            
+        }
+        if (jija === 4) {
+            navigate("/14j")
+            localStorage.setItem("step", 8)
+        }
+    }
+    
+    return(
+        <> 
+        {(errorShowed === 0) ?
+        <div>
+            <Criminal/>
+            <img src={doc2} alt="5" width="640px" height="542px"/>
+            <div className="in-book">
+                <div data-error-text="Думаешь, там еще и труп?" onClick={() => {setErrorShowed(1)}}>Иванов И.И. – судмедэксперт 21-16-18</div>
+                <div data-status="0" id="7-1" className="" onClick={TriggerStyle}>Петров П.П. – специалист-криминалист 35-37-69</div>
+                <div data-status="0" id="7-2" className="" onClick={TriggerStyle}>Васильев В.В. - ОУР 32-43-45</div>
+                <div data-status="0" id="7-3" className="" onClick={TriggerStyle}>Данилов Д.Д. - ОУР 54-23-23</div>
+                <div data-status="0" id="7-4" className="" onClick={TriggerStyle}>Артемов А.А. – инспектор-кинолог 33-54-65</div>
+                <div data-error-text="Стоматолога или ЛОРа брать будешь?" onClick={() => {setErrorShowed(2)}}>Сидоров С.С. – врач 21-54-32</div>
+                <div data-error-text="Не забудь еще взять «Толковый словарь» Даля!" onClick={() => {setErrorShowed(3)}}>Сидоров С.С. - переводчик 65-34-65</div>
+                <div data-error-text="Экстрасенс??? Ты бы еще Гарри Поттера взял!" onClick={() => {setErrorShowed(4)}}>Кириллов К.К. – экстрасенс 45-73-76</div>
+                <div data-error-text="Боишься переволноваться?" onClick={() => {setErrorShowed(5)}}>Якушев Я.Я. – психолог 65-76-89</div>
+            </div>
         </div>
+        
+        : (errorShowed === 1) ? <Error onClick={() => {setErrorShowed(0)}} text="Думаешь, там еще и труп?" button1="Назад" button2style={{display : "none"}}/>
+        : (errorShowed === 2) ? <Error onClick={() => {setErrorShowed(0)}} text="Стоматолога или ЛОРа брать будешь?" button1="Назад" button2style={{display : "none"}}/>
+        : (errorShowed === 3) ? <Error onClick={() => {setErrorShowed(0)}} text="Не забудь еще взять «Толковый словарь» Даля!" button1="Назад" button2style={{display : "none"}}/>
+        : (errorShowed === 4) ? <Error onClick={() => {setErrorShowed(0)}} text="Экстрасенс??? Ты бы еще Гарри Поттера взял!" button1="Назад" button2style={{display : "none"}}/>
+        : <Error onClick={() => {setErrorShowed(0)}} text="Боишься переволноваться?" button1="Назад" button2style={{display : "none"}}/>
+        }</>
     )
 }
+
 export default Fourteen;
