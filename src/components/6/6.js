@@ -1,6 +1,6 @@
-import p6 from "../../images/p6.jpg";
-import p6read from "../../images/buttons/exclamation.png";
-import criminalcase from "../../images/buttons/criminal_case.png";
+import p6 from "../../images/p6.webp";
+import p6read from "../../images/buttons/exclamation.webp";
+import criminalcase from "../../images/buttons/criminal_case.webp";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 

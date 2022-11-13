@@ -1,5 +1,5 @@
 import React from "react";
-import p32б from "../../images/p32б.jpg";
+import p32б from "../../images/p32б.webp";
 import { useNavigate } from "react-router-dom";
 import Criminal from "../ui/criminal-case/criminal-case"
 

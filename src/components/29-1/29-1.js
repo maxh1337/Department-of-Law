@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react"
-import p29 from "../../images/p29.jpg"
-import p29г from "../../images/p29г.jpg"
-import p29а from "../../images/p29а.jpg"
-import p29б from "../../images/p29б.jpg"
-import p29д from "../../images/p29д.jpg"
-import p29в from "../../images/p29в.jpg"
+import p29 from "../../images/p29.webp"
+import p29г from "../../images/p29г.webp"
+import p29а from "../../images/p29а.webp"
+import p29б from "../../images/p29б.webp"
+import p29д from "../../images/p29д.webp"
+import p29в from "../../images/p29в.webp"
 import Criminal from "../ui/criminal-case/criminal-case"
 import Error from "../error/error"
 import { useNavigate } from "react-router-dom"

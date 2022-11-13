@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import p26а from "../../images/p26a.jpg";
+import p26а from "../../images/p26a.webp";
 
 const TwentysixA = () => {
   const navigate = useNavigate();

@@ -1,8 +1,8 @@
-import p10 from "../../images/p10.jpg";
+import p10 from "../../images/p10.webp";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Error from "../error/error";
-import criminalcase from "../../images/buttons/criminal_case.png";
+import criminalcase from "../../images/buttons/criminal_case.webp";
 
 function Ten() {
   const [IsPopupOpened, setIsPopupOpened] = useState(false);

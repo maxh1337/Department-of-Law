@@ -1,5 +1,5 @@
 import React from "react";
-import p9a from "../../images/error.jpg";
+import p9a from "../../images/error.webp";
 
 class Error extends React.Component {
   render() {

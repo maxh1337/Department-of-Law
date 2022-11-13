@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import p31 from "../../images/p31.jpg"
-import p31б from "../../images/p31б.jpg"
+import p31 from "../../images/p31.webp"
+import p31б from "../../images/p31б.webp"
 import Criminal from "../ui/criminal-case/criminal-case"
 import Error from "../error/error";
 const step = JSON.parse(localStorage.getItem("step"));

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
-import p34 from "../../images/p34.jpg"
+import p34 from "../../images/p34.webp"
 import Error from "../error/error";
 import Criminal from "../ui/criminal-case/criminal-case"
 

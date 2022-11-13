@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import criminalcase from "../../images/buttons/criminal_case.png";
-import doc1 from "../../images/doc1.jpg";
+import criminalcase from "../../images/buttons/criminal_case.webp";
+import doc1 from "../../images/doc1.webp";
 import Error from "../error/error";
 
 function Nine() {

@@ -2,7 +2,7 @@ import React from "react";
 import {Navigate} from "react-router-dom";
 import Criminal from "../ui/criminal-case/criminal-case";
 import Error from "../error/error";
-import p17 from "../../images/p17.jpg"
+import p17 from "../../images/p17.webp"
 
 
 class Nineteen extends React.Component{

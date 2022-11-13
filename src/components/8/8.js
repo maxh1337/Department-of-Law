@@ -1,5 +1,5 @@
-import p8 from "../../images/p8.jpg";
-import criminalcase from "../../images/buttons/criminal_case.png";
+import p8 from "../../images/p8.webp";
+import criminalcase from "../../images/buttons/criminal_case.webp";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./8.css";

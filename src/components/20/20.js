@@ -2,9 +2,9 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import p20 from "../../images/p20.jpg";
-import p20а from "../../images/p20а.jpg";
-import p20б from "../../images/p20б.jpg";
+import p20 from "../../images/p20.webp";
+import p20а from "../../images/p20а.webp";
+import p20б from "../../images/p20б.webp";
 
 const Twenty = () => {
   const [currentPage, setCurrentPage] = useState(0);

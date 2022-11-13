@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import p12 from "../../images/p12.jpg";
+import p12 from "../../images/p12.webp";
 import { useState } from "react";
 import Error from "../error/error";
 import Criminal from "../ui/criminal-case/criminal-case";

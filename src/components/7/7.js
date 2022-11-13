@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import doc1 from "../../images/doc1.jpg";
+import doc1 from "../../images/doc1.webp";
 
 function Seven() {
   const navigate = useNavigate();

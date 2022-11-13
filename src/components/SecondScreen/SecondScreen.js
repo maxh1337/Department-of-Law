@@ -1,5 +1,5 @@
 import "./SecondScreen.css";
-import p1 from "../../images/p1.jpg";
+import p1 from "../../images/p1.webp";
 import { Link } from "react-router-dom";
 
 function MainScreen() {

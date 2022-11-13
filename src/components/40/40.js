@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import p40 from "../../images/p40.jpg"
+import p40 from "../../images/p40.webp"
 import Criminal from "../ui/criminal-case/criminal-case"
 
 const Forty = () => {

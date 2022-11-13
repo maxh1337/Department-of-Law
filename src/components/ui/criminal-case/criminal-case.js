@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import criminalcase from "../../../images/buttons/criminal_case.png";
+import criminalcase from "../../../images/buttons/criminal_case.webp";
 
 function Criminal() {
   const zayava = (

@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
-import p27 from "../../images/p27.jpg"
+import p27 from "../../images/p27.webp"
 import Error from "../error/error";
 const step = JSON.parse(localStorage.getItem("step"));
 if (step !== 12) { localStorage.setItem("step", 12)};

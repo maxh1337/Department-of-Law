@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Criminal from "../ui/criminal-case/criminal-case";
-import p28 from "../../images/p28.jpg";
+import p28 from "../../images/p28.webp";
 
 const TwentyEight = () => {
   const navigate = useNavigate()

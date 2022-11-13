@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import p5 from "../../images/p5.jpg";
+import p5 from "../../images/p5.webp";
 
 function FinishedUniversity() {
   const navigate = useNavigate();

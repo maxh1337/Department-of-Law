@@ -2,12 +2,12 @@
 import { useState } from "react"
 import Criminal from "../ui/criminal-case/criminal-case"
 import Error from "../error/error"
-import p29к from "../../images/p29к.jpg"
-import p29к2 from "../../images/p29к2.jpg"
-import p29к3 from "../../images/p29к3.jpg"
-import p29к4 from "../../images/p29к4.jpg"
-import p29к5 from "../../images/p29к5.jpg"
-import p29к6 from "../../images/p29к6.jpg"
+import p29к from "../../images/p29к.webp"
+import p29к2 from "../../images/p29к2.webp"
+import p29к3 from "../../images/p29к3.webp"
+import p29к4 from "../../images/p29к4.webp"
+import p29к5 from "../../images/p29к5.webp"
+import p29к6 from "../../images/p29к6.webp"
 import { useNavigate } from "react-router-dom"
 const step = JSON.parse(localStorage.getItem("step"));
 if (step !== 15) { localStorage.setItem("step", 15)};

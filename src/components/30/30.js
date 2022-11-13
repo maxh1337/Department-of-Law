@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useNavigate } from "react-router-dom";
-import p30 from "../../images/p30.jpg";
+import p30 from "../../images/p30.webp";
 import Criminal from "../ui/criminal-case/criminal-case"
 const step = JSON.parse(localStorage.getItem("step"));
 if (step !== 16) {

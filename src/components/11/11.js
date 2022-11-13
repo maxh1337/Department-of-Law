@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import doc1 from "../../images/doc1.jpg";
+import doc1 from "../../images/doc1.webp";
 import { choosenWay } from "../8/8";
 export const mediumWay = {};
 

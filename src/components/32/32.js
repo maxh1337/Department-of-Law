@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Criminal from "../ui/criminal-case/criminal-case"
-import p32 from "../../images/p32.jpg"
+import p32 from "../../images/p32.webp"
 
 import { useState } from "react";
 import Error from "../error/error";

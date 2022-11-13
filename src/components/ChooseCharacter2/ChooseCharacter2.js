@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import './ChooseCharacter2.css'
-import res2 from '../../images/buttons/Resurs_2_4x.png'
-import p4 from '../../images/p4.jpg'
+import res2 from '../../images/buttons/Resurs_2_4x.webp'
+import p4 from '../../images/p4.webp'
 
 function ChooseCharacter2() {
         const [currentCharacter, setCurrentCharacter] = useState(1)

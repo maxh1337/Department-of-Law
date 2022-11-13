@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import p41 from "../../images/p41.jpg";
+import p41 from "../../images/p41.webp";
 import "./41.css";
 import Criminal from "../ui/criminal-case/criminal-case";
 

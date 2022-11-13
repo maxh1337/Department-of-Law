@@ -1,7 +1,7 @@
-import p2 from "../../images/p2.jpg";
+import p2 from "../../images/p2.webp";
 import "./ChooseCharacter.css";
-import res1 from "../../images/buttons/Resurs_1_4x.png";
-import res2 from "../../images/buttons/Resurs_2_4x.png";
+import res1 from "../../images/buttons/Resurs_1_4x.webp";
+import res2 from "../../images/buttons/Resurs_2_4x.webp";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 

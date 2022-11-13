@@ -1,5 +1,5 @@
 import "./MainScreen.css";
-import p0 from "../../images/p0.jpg";
+import p0 from "../../images/p0.webp";
 import { useNavigate } from "react-router-dom";
 
 function MainScreen({ GoNext }) {
