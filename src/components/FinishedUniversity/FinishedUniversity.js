@@ -4,7 +4,7 @@ import p5 from "../../images/p5.jpg";
 function FinishedUniversity() {
   const navigate = useNavigate();
   const nextPage = () => {
-    navigate("/1");
+    navigate("/6");
   };
 
   return (
