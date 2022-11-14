@@ -93,15 +93,15 @@ body{
 }
 .multiple-cloud:after {
   content: "☐";
-  color: green;
+  color: red;
   font-weight: 800;
   font-size: 25px;
 }
 .multiple-cloud.selected:after {
   content: "☑";
-  color: green;
+  color: blue;
   font-size: 25px;
-  font-weight: 800;
+  font-weight: 300;
 }
   body {
   overflow:hidden;
