@@ -33,6 +33,13 @@ function ChooseCharacter() {
     }
   };
 
+  const nextPage = () => {
+    if (currentCharacter !== 0) {
+      navigate("/choosecharacter1")
+    }
+  }
+  
+
   return (
     <div>
       <button
@@ -86,7 +93,7 @@ function ChooseCharacter() {
         <img className="criminal-case" alt="Следователь" src={res1} />
       </a>
       <div className="Buttons">
-        <button className="linkButton" onClick={() => {}} id="btn1">
+        <button className="linkButton" onClick={nextPage} id="btn1">
           Дальше
         </button>
       </div>
