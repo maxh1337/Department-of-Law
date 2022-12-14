@@ -1,0 +1,9 @@
+.button-link{
+    background-color: transparent;
+    border: none;
+}
+
+.button-link:hover{
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
