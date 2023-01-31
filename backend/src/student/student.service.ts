@@ -52,4 +52,12 @@ export class StudentService {
 
 		return users
 	}
+
+	async getUserById(_id: string) {
+		const currentUser = this.StudentModel.findById(_id).exec()
+
+		if (!currentUser) throw new NotFoundException('Пользователь не найден')
+
+		return currentUser
+	}
 }

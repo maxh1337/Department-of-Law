@@ -40,4 +40,9 @@ export class StudentController {
 	async getAllByGroup(@Param('id', IdValidationPipe) id: string) {
 		return this.StudentService.getAllByGroup(id)
 	}
+
+	@Get(':id')
+	async getById(@Param('id', IdValidationPipe) id: string) {
+		return this.StudentService.getUserById(id)
+	}
 }
