@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Error from "../../ui/error/error";
 import criminalcase from "../../../images/buttons/criminal_case.webp";
+import CriminalCase from "../../ui/criminal-case/criminal-case";
 
 function Ten() {
   const [IsPopupOpened, setIsPopupOpened] = useState(false);
@@ -52,23 +53,7 @@ function Ten() {
     <>
       {errorShowed === false ? (
         <div>
-          <a title="Материалы дела">
-            <img
-              alt="Материалы дела"
-              className="criminal-case"
-              src={criminalcase}
-              onClick={showPopup}
-            />
-            <div className="criminal-case-modal" id="criminal-case-modal">
-              <a
-                href="https://drive.google.com/file/d/1ogUDREkHV6kWEG-wtAslDpj2FrXNxiS1/view"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button>Заявление о преступлении</button>
-              </a>
-            </div>
-          </a>
+          <CriminalCase />
           <img src={p10} alt="2" width="640px" height="542px" />
           <div className="Buttons">
             <button onClick={nextPage}>Продолжить</button>

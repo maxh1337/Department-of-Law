@@ -2,6 +2,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import doc1 from "../../../images/doc1.webp";
 import { choosenWay } from "../8/8";
+import {
+  objasnenie,
+  protokolDoprosa,
+  raportObObnaruzhenii,
+  uzop,
+} from "../../ui/allFiles";
+
 export const mediumWay = {};
 
 function Eleven() {
@@ -14,8 +21,12 @@ function Eleven() {
     localStorage.setItem("step", 5);
   }
 
+  const documents = JSON.parse(localStorage.getItem("documents"));
+
   const nextPage1 = () => {
     mediumWay.foo = 1; //После этого ничего только протокол допроса
+    const newDocuments = [...documents, protokolDoprosa];
+    localStorage.setItem("documents", JSON.stringify(newDocuments));
     navigate("/12");
     localStorage.setItem("mediumWay", 1);
     localStorage.setItem("step", 6);
@@ -23,6 +34,8 @@ function Eleven() {
   const nextPage2 = () => {
     mediumWay.foo = 2;
     setWay(1); // Только УЗОП
+    const newDocuments = [...documents, uzop];
+    localStorage.setItem("documents", JSON.stringify(newDocuments));
     navigate("/12");
     localStorage.setItem("mediumWay", 2);
     localStorage.setItem("step", 6);
@@ -30,6 +43,8 @@ function Eleven() {
   const nextPage3 = () => {
     mediumWay.foo = 3;
     setWay(1); // Рапорт и объяснение
+    const newDocuments = [...documents, raportObObnaruzhenii, objasnenie];
+    localStorage.setItem("documents", JSON.stringify(newDocuments));
     choosenWay.foo = 4;
     localStorage.setItem("mediumWay", 3);
     localStorage.setItem("step", 6);
@@ -38,6 +53,8 @@ function Eleven() {
   const nextPage4 = () => {
     mediumWay.foo = 4;
     setWay(1); // Объяснение
+    const newDocuments = [...documents, objasnenie];
+    localStorage.setItem("documents", JSON.stringify(newDocuments));
     navigate("/12");
     localStorage.setItem("step", 6);
     if (nochangeLC === false) {

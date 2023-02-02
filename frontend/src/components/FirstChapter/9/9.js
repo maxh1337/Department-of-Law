@@ -3,11 +3,14 @@ import { useNavigate } from "react-router-dom";
 import criminalcase from "../../../images/buttons/criminal_case.webp";
 import doc1 from "../../../images/doc1.webp";
 import Error from "../../ui/error/error";
+import CriminalCase from "../../ui/criminal-case/criminal-case";
+import { objasnenie, protokolDoprosa } from "../../ui/allFiles";
 
 function Nine() {
   const [IsPopupOpened, setIsPopupOpened] = useState(false);
   const navigate = useNavigate();
   const [error, setError] = useState(false);
+  const documents = JSON.parse(localStorage.getItem("documents"));
 
   const showPopup = () => {
     const popup = document.querySelector(".criminal-case-modal");
@@ -36,6 +39,10 @@ function Nine() {
       inputValue === "статья 51 Конституции Российской Федерации"
     ) {
       navigate("/10");
+
+      const newDocuments = [...documents, objasnenie];
+      localStorage.setItem("documents", JSON.stringify(newDocuments));
+
       localStorage.setItem("step", 4);
     } else {
       setError(true);
@@ -57,15 +64,7 @@ function Nine() {
               src={criminalcase}
               onClick={showPopup}
             />
-            <div className="criminal-case-modal">
-              <a
-                href="https://drive.google.com/file/d/1ogUDREkHV6kWEG-wtAslDpj2FrXNxiS1/view"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button>Заявление о преступлении</button>
-              </a>
-            </div>
+            <CriminalCase />
           </a>
           <div className="doc-content" name="form1">
             Объяснение:

@@ -3,6 +3,8 @@ import criminalcase from "../../../images/buttons/criminal_case.webp";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./8.css";
+import CriminalCase from "../../ui/criminal-case/criminal-case";
+
 export const choosenWay = {};
 
 function Eight() {
@@ -42,23 +44,7 @@ function Eight() {
 
   return (
     <div>
-      <a title="Материалы дела">
-        <img
-          alt="Материалы дела"
-          className="criminal-case"
-          src={criminalcase}
-          onClick={showPopup}
-        />
-        <div className="criminal-case-modal">
-          <a
-            href="https://drive.google.com/file/d/1ogUDREkHV6kWEG-wtAslDpj2FrXNxiS1/view"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button>Заявление о преступлении</button>
-          </a>
-        </div>
-      </a>
+      <CriminalCase />
       <img src={p8} alt="2" width="640px" height="542px" />
       <div
         className="button-cloud"
@@ -107,4 +93,5 @@ function Eight() {
     </div>
   );
 }
+
 export default Eight;

@@ -5,12 +5,20 @@ import { Link, useNavigate } from "react-router-dom";
 import p20 from "../../../images/p20.webp";
 import p20а from "../../../images/p20а.webp";
 import p20б from "../../../images/p20б.webp";
+import {
+  objasnenieDocheri,
+  objasnenieMuzha,
+  protokolDoprosa,
+} from "../../ui/allFiles";
+import CriminalCase from "../../ui/criminal-case/criminal-case";
 
 const Twenty = () => {
+  const documents = JSON.parse(localStorage.getItem("documents"));
   const [currentPage, setCurrentPage] = useState(0);
   const navigate = useNavigate();
   return currentPage === 0 ? (
     <div>
+      <CriminalCase />
       <img width="640px" height="542px" src={p20} alt="p20" />
       <div className="Buttons">
         <button
@@ -49,7 +57,14 @@ const Twenty = () => {
     <div>
       <img width="640px" height="542px" src={p20а} alt="p20a" />
       <div className="Buttons">
-        <button data-to-page="p22a" onClick={() => setCurrentPage(0)}>
+        <button
+          data-to-page="p22a"
+          onClick={() => {
+            setCurrentPage(0);
+            const newDocuments = [...documents, objasnenieMuzha];
+            localStorage.setItem("documents", JSON.stringify(newDocuments));
+          }}
+        >
           Дальше
         </button>
       </div>
@@ -58,7 +73,14 @@ const Twenty = () => {
     <div>
       <img width="640px" height="542px" src={p20б} alt="p20б" />
       <div className="Buttons">
-        <button data-to-page="p22a" onClick={() => setCurrentPage(0)}>
+        <button
+          data-to-page="p22a"
+          onClick={() => {
+            setCurrentPage(0);
+            const newDocuments = [...documents, objasnenieDocheri];
+            localStorage.setItem("documents", JSON.stringify(newDocuments));
+          }}
+        >
           Дальше
         </button>
       </div>
