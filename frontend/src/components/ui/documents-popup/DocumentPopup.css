@@ -1,6 +1,5 @@
 .popup {
     display: flex;
-
     position: fixed;
     z-index: 2;
 
@@ -8,7 +7,7 @@
     right: 0;
     left: 0;
     /*bottom: 440px;*/
-    bottom: 44vh;
+    bottom: 41vh;
     margin: auto;
     justify-content: center;
     align-items: center;
@@ -146,14 +145,10 @@
 }
 
 .popup__image {
-    /*margin-right: 25px;*/
+    margin-right: 20px;
     /* 90 vw 45 vh*/
-    display: block;
-    /*max-width: 18rem;*/
-    /*min-width: 15rem;*/
-    width: 18rem;
-    height: auto;
-
+    max-width: 18rem;
+    min-width: 15rem;
     border-radius: 2px;
 
     box-shadow: 0 0 10px rgba(255, 255, 255, .1);
@@ -170,7 +165,8 @@
 }
 
 .popup__figure {
-    margin: auto auto;
+    margin-right: auto;
+    margin-left: auto;
     position: relative;
 
     font-size: 0;
