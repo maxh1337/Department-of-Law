@@ -1,0 +1,183 @@
+.popup {
+    display: flex;
+
+    position: fixed;
+    z-index: 2;
+
+    /*top: 0;*/
+    right: 0;
+    left: 0;
+    /*bottom: 440px;*/
+    bottom: 44vh;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+
+    /*max-width: calc(100vw - 40px * 2);*/
+    max-width: 31.25rem;
+    /*min-height: 100vh;*/
+
+    visibility: hidden;
+    opacity: 0;
+    transition-property: visibility, opacity;
+    transition-timing-function: ease-out;
+
+    pointer-events: none;
+}
+
+.popup::before {
+    content: '';
+
+    position: fixed;
+
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+
+    overflow: visible;
+
+    z-index: -1;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    backdrop-filter: blur(5px) brightness(1.1);
+}
+
+@keyframes popup__appear {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.popup_opened {
+
+    visibility: visible;
+    opacity: 1;
+
+    pointer-events: all;
+}
+
+.popup__close-button {
+    max-width: 50px;
+    min-height: 41px;
+    bottom: 24rem;
+    border: none;
+    outline: none;
+
+    position: absolute;
+
+    background-color: transparent;
+    background-image: url(../../../images/add-icon.svg);
+    transform: rotate(-45deg);
+    background-repeat: no-repeat;
+    background-position: center;
+    /*background-size: cover;*/
+
+    padding: 0;
+
+    cursor: pointer;
+
+    transition-property: opacity, transform, min-height, min-width, top, right;
+    transition-duration: .2s;
+
+    top: -38px;
+    right: -38px;
+
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.popup__close-button:active {
+    pointer-events: none;
+    opacity: .6;
+    transform: rotate(-45deg) scale(.9);
+}
+
+@media (hover: hover) {
+    .popup__close-button:hover {
+        opacity: .6;
+    }
+}
+
+
+@media screen and (max-width: 376px) {
+    .popup {
+        bottom: 185px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .popup__close-button_parent-corners_straight {
+        top: -42px;
+        right: -42px;
+    }
+}
+
+.popup__container {
+    position: relative;
+
+    width: 430px;
+    max-width: 100%;
+
+    border-radius: 10px;
+
+    background-color: rgba(255, 255, 255, .93);
+
+    backdrop-filter: blur(30px) saturate(5) brightness(2);
+
+    box-shadow: 0 0 15px rgba(255, 255, 255, .3);
+
+    padding: 34px 36px 36px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 767px) {
+    .popup__container {
+        padding: 25px 22px;
+    }
+}
+
+.popup__container {
+    animation: popup__appear .25s cubic-bezier(0.175, 0.885, 0.32, 1);
+}
+
+.popup__image {
+    /*margin-right: 25px;*/
+    /* 90 vw 45 vh*/
+    display: block;
+    /*max-width: 18rem;*/
+    /*min-width: 15rem;*/
+    width: 18rem;
+    height: auto;
+
+    border-radius: 2px;
+
+    box-shadow: 0 0 10px rgba(255, 255, 255, .1);
+    filter: drop-shadow(0 0 10px #000)
+}
+
+.popup__caption {
+    width: fit-content;
+
+    font-size: 12px;
+    line-height: 15px;
+
+    margin-top: 10px;
+}
+
+.popup__figure {
+    margin: auto auto;
+    position: relative;
+
+    font-size: 0;
+
+    cursor: auto;
+}
+
+.popup__figure {
+    animation: popup__appear .25s cubic-bezier(0.175, 0.885, 0.32, 1);
+}

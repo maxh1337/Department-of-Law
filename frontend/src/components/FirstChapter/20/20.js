@@ -5,11 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import p20 from "../../../images/p20.webp";
 import p20а from "../../../images/p20а.webp";
 import p20б from "../../../images/p20б.webp";
-import {
-  objasnenieDocheri,
-  objasnenieMuzha,
-  protokolDoprosa,
-} from "../../ui/allFiles";
+import { objasnenieDocheri, objasnenieMuzha } from "../../ui/allFiles";
 import CriminalCase from "../../ui/criminal-case/criminal-case";
 
 const Twenty = () => {

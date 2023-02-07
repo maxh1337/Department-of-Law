@@ -4,6 +4,7 @@ import criminalcase from "../../../images/buttons/criminal_case.webp";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CriminalCase from "../../ui/criminal-case/criminal-case";
+import { zayava } from "../../ui/allFiles";
 
 function Six() {
   const [IsPopupOpened, setIsPopupOpened] = useState(false);
@@ -21,11 +22,6 @@ function Six() {
   };
 
   const nextPage = () => {
-    const zayava = {
-      href: "https://drive.google.com/file/d/1ogUDREkHV6kWEG-wtAslDpj2FrXNxiS1/view",
-      name: "Заявление о преступлении",
-    };
-
     const documents = JSON.parse(localStorage.getItem("documents"));
     localStorage.setItem("documents", JSON.stringify([zayava]));
 

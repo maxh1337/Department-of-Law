@@ -1,13 +1,19 @@
+import test from "../../images/docs/TEST.jpg";
+import zayavlenie from "../../images/docs/zayava.png";
+import protocolDoprosa1 from "../../images/docs/protocolDoprosa1.png";
 //Заявление о преступлении
 export const zayava = {
   href: "https://drive.google.com/file/d/1ogUDREkHV6kWEG-wtAslDpj2FrXNxiS1/view",
   name: "Заявление о преступлении",
+  data: "zayava",
+  documents: [{ image: zayavlenie }],
 };
 
 //Протокол допроса потерпевшей (ЕГО БЫТЬ НЕ ДОЛЖНО В ФИНАЛЕ)
 export const protokolDoprosa = {
   href: "https://drive.google.com/file/d/1pjE-OOjKm-Cj78MKxQJqr5UiEXChIxAF/view",
   name: "Протокол допроса потерпевшей",
+  documents: [{ image: protocolDoprosa1 }],
 };
 
 //УЗОП
@@ -50,6 +56,7 @@ export const objasnenieDocheri = {
 export const ActSobaki = {
   href: "https://docs.google.com/document/d/1UUNJhqa0YklyL1pfW9ezqtoE-KSC8z2U/edit?usp=share_link&ouid=103959558910814942921&rtpof=true&sd=true",
   name: "Акт о применении служебной собаки",
+  documents: [test, test],
 };
 
 //Протокол осмотра места происшествия(ОМП)
