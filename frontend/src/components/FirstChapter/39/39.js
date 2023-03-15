@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import p39 from "../../../images/p39.webp";
+import p39 from "../../../images/p39.png";
 import Criminal from "../../ui/criminal-case/criminal-case";
 import {
   resultObhoda,
@@ -19,13 +19,13 @@ const Thirtynine = () => {
       <div className="Buttons">
         <button
           onClick={() => {
+            navigate("/40");
             const newDocuments = [
               ...documents,
               ZacluchenieDactilo,
               ZacluchenieTrasologicheskoy,
             ];
             localStorage.setItem("documents", JSON.stringify(newDocuments));
-            navigate("/40");
           }}
         >
           Продолжить

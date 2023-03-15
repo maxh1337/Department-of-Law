@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
-import p27 from "../../../images/p27.webp";
+import p27 from "../../../images/p27.png";
 import Error from "../../ui/error/error";
 import CriminalCase from "../../ui/criminal-case/criminal-case";
 
@@ -9,6 +9,7 @@ const step = JSON.parse(localStorage.getItem("step"));
 if (step !== 12) {
   localStorage.setItem("step", 12);
 }
+
 class Twentyseven extends React.Component {
   constructor(props) {
     super(props);
@@ -139,11 +140,21 @@ class Twentyseven extends React.Component {
       ) : (
         <Error
           text="Подумай!"
-          button1="назад"
-          button2style={{ display: "none" }}
           onClick1={() => {
             this.setState({ error: false });
           }}
+          button1="Понятно"
+          newButton={
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://docs.google.com/document/d/1kAzG19Jx-eS4HIm5l_d3O4RJo4ZuntaT/edit?usp=share_link&ouid=103959558910814942921&rtpof=true&sd=true"
+            >
+              {" "}
+              <button>Не понятно</button>
+            </a>
+          }
+          button2style={{ display: "none" }}
         />
       )
     ) : (

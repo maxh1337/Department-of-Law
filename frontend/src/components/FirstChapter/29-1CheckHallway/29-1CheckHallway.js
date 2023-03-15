@@ -1,17 +1,17 @@
+import { FC, useState } from "react";
 import Criminal from "../../ui/criminal-case/criminal-case";
 import p30 from "../../../images/p30.webp";
 import { useNavigate } from "react-router-dom";
-import p29footprint from "../../../images/29-2footPrint.webp";
-import p29PUGOVICA from "../../../images/29-2PUG.webp";
+import p29a from "../../../images/29-1a.webp";
+import p29d from "../../../images/29-1d.webp";
 import Error from "../../ui/error/error";
-import { useState } from "react";
 
 const CheckHallway = () => {
   const [error, setError] = useState(0);
   const navigate = useNavigate();
   const [step, setStep] = useState(0);
   const nextPage = () => {
-    navigate("/31");
+    navigate("/29-2");
   };
 
   return (
@@ -37,12 +37,7 @@ const CheckHallway = () => {
         ) : step === 1 ? (
           <>
             <Criminal />
-            <img
-              width="640px"
-              height="542px"
-              src={p29footprint}
-              alt="p29footprint"
-            />
+            <img width="640px" height="542px" src={p29a} alt="29-1a" />
             <a
               onClick={() => setStep(2)}
               className="hover"
@@ -71,12 +66,7 @@ const CheckHallway = () => {
         ) : (
           <>
             <Criminal />
-            <img
-              width="640px"
-              height="542px"
-              src={p29PUGOVICA}
-              alt="p29PUGOVICA"
-            />
+            <img width="640px" height="542px" src={p29d} alt="29-1d" />
             <a
               onClick={() => setError(1)} // Set Error этот левый
               className="hover"
@@ -103,7 +93,7 @@ const CheckHallway = () => {
             ></a>
           </>
         )
-      ) : error === 1 ? ( //Пуговица
+      ) : error === 1 ? ( //Ткань
         <Error
           text="Подумай!"
           onClick1={() => {
@@ -114,7 +104,7 @@ const CheckHallway = () => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://docs.google.com/document/d/124zV7amX4PCQEhUcZgsUuZlAIJhIBTjz/edit?usp=share_link&ouid=103959558910814942921&rtpof=true&sd=true"
+              href="https://drive.google.com/file/d/1KDVs9OQs31MTTIFIP-zIVe9hDEwONRhE/view"
             >
               <button>Не понятно</button>
             </a>
@@ -122,7 +112,7 @@ const CheckHallway = () => {
           button2style={{ display: "none" }}
         />
       ) : (
-        // След ноги
+        // Грунт
         <Error
           text="Подумай!"
           onClick1={() => {
@@ -133,7 +123,7 @@ const CheckHallway = () => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://docs.google.com/document/d/1xWvu9AnfNT_fRCiEVAUXXR0XEN0AyKD6/edit?usp=share_link&ouid=103959558910814942921&rtpof=true&sd=true"
+              href="https://drive.google.com/file/d/1jOdo_sb3Osmz-xrjimoenvbjNpaENJlb/view"
             >
               <button>Не понятно</button>
             </a>

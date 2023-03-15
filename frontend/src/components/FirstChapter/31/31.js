@@ -33,7 +33,7 @@ class Thirtyone extends React.Component {
     }
     this.setState({ multiSet: cloneSet });
 
-    if (cloneSet.size === 4) {
+    if (cloneSet.size === 5) {
       this.setState({
         multiSet: new Set(),
         redirect: true,
@@ -100,6 +100,23 @@ class Thirtyone extends React.Component {
               &nbsp;
             </div>
             <div
+              data-multi-value="5"
+              onClick={this.toggleMultiSet}
+              className={
+                "multiple-cloud" +
+                (this.state.multiSet.has(5) ? " selected" : "")
+              }
+              style={{
+                position: "absolute",
+                top: 285,
+                left: "calc(50% - 140px)",
+                width: 130,
+                height: 85,
+              }}
+            >
+              &nbsp;
+            </div>
+            <div
               data-multi-value="4"
               onClick={this.toggleMultiSet}
               className={
@@ -140,6 +157,21 @@ class Thirtyone extends React.Component {
                 position: "absolute",
                 top: 160,
                 left: "calc(50% - 270px)",
+                width: 130,
+                height: 85,
+              }}
+            >
+              &nbsp;
+            </div>
+            <div
+              onClick={() => {
+                this.setState({ error: true });
+              }}
+              className="multiple-cloud"
+              style={{
+                position: "absolute",
+                top: 310,
+                left: "calc(50% - 260px)",
                 width: 130,
                 height: 85,
               }}

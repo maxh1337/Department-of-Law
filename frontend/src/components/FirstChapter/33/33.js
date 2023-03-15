@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import p33 from "../../../images/p33.webp";
 import Error from "../../ui/error/error";
-import Criminal from "../../ui/criminal-case/criminal-case"
+import Criminal from "../../ui/criminal-case/criminal-case";
 
 const Thirtythree = () => {
   const [error, setError] = useState(false);
@@ -23,7 +23,7 @@ const Thirtythree = () => {
   return redirect === false ? (
     error === false ? (
       <div>
-        <Criminal/>
+        <Criminal />
         <img width="640px" height="542px" src={p33} alt="p33" />
         <div className="doc-content">
           ПОСТАНОВЛЕНИЕ:
@@ -54,7 +54,7 @@ const Thirtythree = () => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://drive.google.com/file/d/1KDVs9OQs31MTTIFIP-zIVe9hDEwONRhE/view"
+            href="https://docs.google.com/document/d/1DjKMacNaiDvHWz_sAArIHUQLkqL0iUvq/edit?usp=share_link&ouid=103959558910814942921&rtpof=true&sd=true"
           >
             <button>Не понятно</button>
           </a>
