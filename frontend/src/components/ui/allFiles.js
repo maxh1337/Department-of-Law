@@ -1,11 +1,11 @@
 import zayavlenie from "../../images/docs/Заявление о преступлении.png";
-import protocolDoprosa1 from "../../images/docs/Протокол допроса потерпевшей-1.png";
-import protocolDoprosa2 from "../../images/docs/Протокол допроса потерпевшей-2.png";
-import protocolDoprosa3 from "../../images/docs/Протокол допроса потерпевшей-3.png";
-import protocolDoprosa4 from "../../images/docs/Протокол допроса потерпевшей-4.png";
-import uzop1 from "../../images/docs/Протокол устного заявления о преступлении-1.png";
-import uzop2 from "../../images/docs/Протокол устного заявления о преступлении-2.png";
-import raportObnaruzh from "../../images/docs/Рапорт об обнаружении признаков преступления.png";
+import protocolDoprosa1 from "../../images/docs/Протокол-допроса-потерпевшей-1.webp";
+import protocolDoprosa2 from "../../images/docs/Протокол-допроса-потерпевшей-2.webp";
+import protocolDoprosa3 from "../../images/docs/Протокол-допроса-потерпевшей-3.webp";
+import protocolDoprosa4 from "../../images/docs/Протокол-допроса-потерпевшей-4.webp";
+import uzop1 from "../../images/docs/Протокол-устного-заявления-о-преступлении-1.webp";
+import uzop2 from "../../images/docs/Протокол-устного-заявления-о-преступлении-2.webp";
+import raportObnaruzh from "../../images/docs/Рапорт-об-обнаружении-признаков-преступления.webp";
 import obyasneniyeSinichkinoy from "../../images/docs/Объяснение Синичкиной.png";
 import obyasneniyeMuzha from "../../images/docs/Объяснение мужа.png";
 import obyasneniyeDochery from "../../images/docs/Объяснение дочери.png";
@@ -32,7 +32,7 @@ import zamok4 from "../../images/docs/Заключение эксперта за
 import zamok5 from "../../images/docs/Заключение эксперта замок-5.png";
 import otkaz1 from "../../images/docs/Постановление об отказе в возбуждении уголовного дела-1.png";
 import otkaz2 from "../../images/docs/Постановление об отказе в возбуждении уголовного дела-2.png";
-import otkaz3 from "../../images/docs/Постановление об отказе в возбуждении уголовного дела-3.png";
+import otkaz3 from "../../images/docs/Постановление-об-отказе-в-возбуждении-уголовного-дела-3.webp";
 import prinyatie1 from "../../images/docs/Постановление о возбуждении уголовного дела и принятии его к производству-1.png";
 import prinyatie2 from "../../images/docs/Постановление о возбуждении уголовного дела и принятии его к производству-2.png";
 
