@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import criminalcase from "../../../images/buttons/criminal_case.webp";
 import DocumentPopup from "../documents-popup/DocumentPopup";
-import test from "../../../images/docs/TEST.jpg";
-import { ActSobaki } from "../allFiles";
-import zayavlenie from "../../../images/docs/zayava.png";
 
 function Criminal() {
   // Проверка на открытие Popup Criminal Case

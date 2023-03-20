@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import p39 from "../../../images/p39.png";
 import Criminal from "../../ui/criminal-case/criminal-case";
 import {
-  resultObhoda,
   ZacluchenieDactilo,
   ZacluchenieTrasologicheskoy,
 } from "../../ui/allFiles";

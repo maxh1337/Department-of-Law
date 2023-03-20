@@ -20,8 +20,9 @@ function MainScreen() {
             color: "white",
           }}
         ></Link>
-        <Link
-          to="/"
+        <a
+          href="https://docs.google.com/document/d/1BA5fbrDL4g9TBYQvIV49UUDFfYrTUYn_/edit?usp=share_link&ouid=103959558910814942921&rtpof=true&sd=true"
+          target="_blank"
           data-to-page="about game"
           className="buttonToChoose1"
           style={{
@@ -32,7 +33,7 @@ function MainScreen() {
             height: "70px",
             color: "white",
           }}
-        ></Link>
+        ></a>
       </div>
     </div>
   );

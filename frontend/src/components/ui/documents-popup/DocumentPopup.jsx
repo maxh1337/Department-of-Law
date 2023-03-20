@@ -7,7 +7,7 @@ const DocumentPopup = ({ href, isVisible, closePopup, children }) => {
   let count;
   const [offset, setOffset] = useState(0);
 
-  const PAGE_WIDTH = 288;
+  const PAGE_WIDTH = 320;
 
   const forward = () => {
     count = children.length;

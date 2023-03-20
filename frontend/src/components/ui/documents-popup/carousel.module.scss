@@ -6,8 +6,9 @@
 
 .allDocumentsContainer {
   //height: 100%;
-  //max-width: 18rem;
+  max-width: 20rem;
   //max-height: 100%;
+  display: flex;
   transition: translate;
   transition-property: transform;
   transition-duration: 300ms;

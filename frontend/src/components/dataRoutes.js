@@ -40,6 +40,7 @@ import Fortyfour from "./FirstChapter/44/44";
 import Fortysix from "./FirstChapter/46/46";
 import Fortyseven from "./FirstChapter/47/47";
 import CheckHallway from "./FirstChapter/29-1CheckHallway/29-1CheckHallway";
+import Fortyfive from "./FirstChapter/45/45";
 
 export const routes = [
   {
@@ -246,6 +247,11 @@ export const routes = [
     path: "/44",
     exact: true,
     component: Fortyfour,
+  },
+  {
+    path: "/45",
+    exact: true,
+    component: Fortyfive,
   },
   {
     path: "/46",

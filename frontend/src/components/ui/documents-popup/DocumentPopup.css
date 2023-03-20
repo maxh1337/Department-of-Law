@@ -3,7 +3,7 @@
     position: fixed;
     z-index: 2;
 
-    /*top: 0;*/
+    top: 25px;
     right: 0;
     left: 0;
     /*bottom: 440px;*/
@@ -145,10 +145,10 @@
 }
 
 .popup__image {
-    margin-right: 20px;
+    /*margin-right: 20px;*/
     /* 90 vw 45 vh*/
-    max-width: 18rem;
-    min-width: 15rem;
+    /*max-width: 18rem;*/
+    min-width: 20rem;
     border-radius: 2px;
 
     box-shadow: 0 0 10px rgba(255, 255, 255, .1);
