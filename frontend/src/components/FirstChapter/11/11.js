@@ -43,7 +43,7 @@ function Eleven() {
   const nextPage3 = () => {
     mediumWay.foo = 3;
     setWay(1); // Рапорт и объяснение
-    const newDocuments = [...documents, raportObObnaruzhenii, objasnenie];
+    const newDocuments = [...documents, raportObObnaruzhenii];
     localStorage.setItem("documents", JSON.stringify(newDocuments));
     choosenWay.foo = 4;
     localStorage.setItem("mediumWay", 3);

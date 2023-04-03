@@ -40,8 +40,8 @@ function Nine() {
     ) {
       navigate("/10");
 
-      const newDocuments = [...documents, objasnenie];
-      localStorage.setItem("documents", JSON.stringify(newDocuments));
+      // const newDocuments = [...documents, objasnenie];
+      // localStorage.setItem("documents", JSON.stringify(newDocuments));
 
       localStorage.setItem("step", 4);
     } else {
