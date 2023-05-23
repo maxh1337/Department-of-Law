@@ -211,7 +211,7 @@ class Thirtyone extends React.Component {
           </div>
         ) : (
           <Error
-            text="Ты не для Instagram фотографии выбираешь"
+            text="Ты не для социальной сети фотографии выбираешь"
             button1="назад"
             button2style={{ display: "none" }}
             onClick1={() => {

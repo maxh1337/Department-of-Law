@@ -206,7 +206,7 @@ function Twentynine2() {
               <a
                 data-to-page="p29к"
                 onClick={() => {
-                  setEvidence(0);
+                  setError(2);
                 }}
                 className="shkafi"
                 style={{
@@ -223,7 +223,7 @@ function Twentynine2() {
               <a
                 data-to-page="p29к3о"
                 onClick={() => {
-                  setError(2);
+                  setEvidence(0);
                 }}
                 className="shkafi"
                 style={{
@@ -329,7 +329,7 @@ function Twentynine2() {
               <a
                 data-to-page="p29к"
                 onClick={() => {
-                  setEvidence(0);
+                  setError(4);
                 }}
                 className="shkafi"
                 style={{
@@ -346,7 +346,7 @@ function Twentynine2() {
               <a
                 data-to-page="p29к6о"
                 onClick={() => {
-                  setError(4);
+                  setEvidence(0);
                 }}
                 className="shkafi"
                 style={{
@@ -392,7 +392,7 @@ function Twentynine2() {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://drive.google.com/file/d/1KDVs9OQs31MTTIFIP-zIVe9hDEwONRhE/view"
+              href="https://docs.google.com/document/d/14sB0pD8B8q7cqGTmifWnQzy7N3szKDaE/edit?usp=share_link&ouid=103959558910814942921&rtpof=true&sd=true"
             >
               <button>Не понятно</button>
             </a>
@@ -410,7 +410,7 @@ function Twentynine2() {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://drive.google.com/file/d/1KDVs9OQs31MTTIFIP-zIVe9hDEwONRhE/view"
+              href="https://docs.google.com/document/d/1eGy_w0InRNLY46OGqTjrts9BIyc5m1ap/edit?usp=share_link&ouid=103959558910814942921&rtpof=true&sd=true"
             >
               <button>Не понятно</button>
             </a>
@@ -428,7 +428,7 @@ function Twentynine2() {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://drive.google.com/file/d/1KDVs9OQs31MTTIFIP-zIVe9hDEwONRhE/view"
+              href="https://docs.google.com/document/d/14sB0pD8B8q7cqGTmifWnQzy7N3szKDaE/edit?usp=share_link&ouid=103959558910814942921&rtpof=true&sd=true"
             >
               <button>Не понятно</button>
             </a>

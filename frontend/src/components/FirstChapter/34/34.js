@@ -60,7 +60,7 @@ const Thirtyfour = () => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://drive.google.com/file/d/1KDVs9OQs31MTTIFIP-zIVe9hDEwONRhE/view"
+            href="https://docs.google.com/document/d/1_WS7PNbuVftSPMRfUdSrPn8roxSpcUuh/edit?usp=share_link&ouid=103959558910814942921&rtpof=true&sd=true"
           >
             <button>Не понятно</button>
           </a>

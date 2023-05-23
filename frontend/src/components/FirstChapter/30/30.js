@@ -114,7 +114,7 @@ const CheckHallway = () => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://docs.google.com/document/d/124zV7amX4PCQEhUcZgsUuZlAIJhIBTjz/edit?usp=share_link&ouid=103959558910814942921&rtpof=true&sd=true"
+              href="https://docs.google.com/document/d/19mMkEScDPikKX9HTi0XdTHIy1DjHG99c/edit?usp=share_link&ouid=103959558910814942921&rtpof=true&sd=true"
             >
               <button>Не понятно</button>
             </a>
@@ -133,7 +133,7 @@ const CheckHallway = () => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://docs.google.com/document/d/1xWvu9AnfNT_fRCiEVAUXXR0XEN0AyKD6/edit?usp=share_link&ouid=103959558910814942921&rtpof=true&sd=true"
+              href="https://docs.google.com/document/d/19mMkEScDPikKX9HTi0XdTHIy1DjHG99c/edit?usp=share_link&ouid=103959558910814942921&rtpof=true&sd=true"
             >
               <button>Не понятно</button>
             </a>

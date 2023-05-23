@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import molodec from "../../../images/p46.webp";
 import neMolodec from "../../../images/конец игры_ты не справился.png";
 import Criminal from "../../ui/criminal-case/criminal-case";

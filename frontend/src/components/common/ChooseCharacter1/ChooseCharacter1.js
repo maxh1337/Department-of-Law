@@ -26,7 +26,7 @@ function ChooseCharacter1() {
         title="Следователь"
         target="_blank"
         rel="nooper noreferrer"
-        href="https://drive.google.com/file/d/1Qqku69nm-I09zpUbsrNlUvIVsbru2P1m/view"
+        href="https://docs.google.com/document/d/1LnsnWhw1XKrnIOVd8pDAr0llWaLJLKNN/edit?usp=share_link&ouid=103959558910814942921&rtpof=true&sd=true"
       >
         <img
           alt="Следователь"

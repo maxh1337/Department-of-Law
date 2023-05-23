@@ -12,3 +12,9 @@ xXx  Улики 29-1 и 29-2
 
 
 Если все докумменты правильные и нажали Возбуждение уголовного дела то => ВЫИГРАЛ
+
+
+Сделать сохранение по примеру 47 части с использованием сохраненных документов(По нажатию кнопки сохранения сохранять в local storage копию документов, так же в отдельный localstorage сохранять url)
+https://stackoverflow.com/questions/39823681/read-the-current-full-url-with-react
+  const location = useLocation();
+  const cringe=  location.pathname
