@@ -18,7 +18,7 @@ const Twenty = () => {
     <div>
       <CriminalCase />
       <img width="640px" height="542px" src={p20} alt="p20" />
-      {showButtonState === 2 ? (
+      {showButtonState >= 2 ? (
         <div className="Buttons">
           <button
             onClick={() => {
