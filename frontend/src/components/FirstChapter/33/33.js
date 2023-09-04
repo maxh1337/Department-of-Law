@@ -8,7 +8,7 @@ const Thirtythree = () => {
   const [error, setError] = useState(false);
   const [redirect, setRedirect] = useState(false);
   const CheckAndRedirect = () => {
-    const inputValue = document.getElementById("19-1").value;
+    const inputValue = document.getElementById("19-1").value; // Было 19-i1
     if (
       inputValue.toLowerCase() === "дактилоскопическую" ||
       inputValue.toLowerCase() === "дактилоскопическая" ||

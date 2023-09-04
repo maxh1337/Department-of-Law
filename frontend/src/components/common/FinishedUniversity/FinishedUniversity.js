@@ -18,4 +18,5 @@ function FinishedUniversity() {
     </div>
   );
 }
+
 export default FinishedUniversity;

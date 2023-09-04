@@ -4,9 +4,9 @@ import Criminal from "../../ui/criminal-case/criminal-case";
 import p28 from "../../../images/p28.webp";
 
 const TwentyEight = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const nextPage = () => {
-    navigate("/29-1");
+    navigate("/29-i1");
   };
   return (
     <div>

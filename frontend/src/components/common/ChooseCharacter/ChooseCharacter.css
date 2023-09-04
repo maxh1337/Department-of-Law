@@ -1,13 +1,15 @@
-.criminal-case{
+.criminal-case {
     position: absolute;
     left: calc(50% + 248px);
     width: 58px;
     top: 19px;
 }
-.borderjs{
+
+.borderjs {
     border: 5px solid yellow;
 }
-.buttonToChoose1{
+
+.buttonToChoose1 {
     display: inline-block;
     position: absolute;
     right: calc(50% + 90px);
@@ -19,20 +21,28 @@
     background: transparent;
     /* border: none; */
 }
-.buttonToChoose1:hover{
-    background-color: transparent;
-    border: 5px solid yellow;
-}
-.buttonToChoose2:hover{
-    background-color: transparent;
-    border: 5px solid yellow;
-}
-.buttonToChoose3:hover{
+
+.buttonToChoose1Active {
     background-color: transparent;
     border: 5px solid yellow;
 }
 
-.buttonToChoose2{
+.buttonToChoose1:hover {
+    background-color: transparent;
+    border: 5px solid yellow;
+}
+
+.buttonToChoose2:hover {
+    background-color: transparent;
+    border: 5px solid yellow;
+}
+
+.buttonToChoose3:hover {
+    background-color: transparent;
+    border: 5px solid yellow;
+}
+
+.buttonToChoose2 {
     display: inline-block;
     position: absolute;
     right: calc(50% + -73px);
@@ -45,7 +55,7 @@
     /* border: none; */
 }
 
-.buttonToChoose3{
+.buttonToChoose3 {
     display: inline-block;
     position: absolute;
     right: calc(50% + -235px);

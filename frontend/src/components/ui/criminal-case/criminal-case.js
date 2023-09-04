@@ -55,9 +55,13 @@ function Criminal() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button onClick={() => showDocuments(document)}>
-                    {document.name}
-                  </button>
+                  {document.onClick === false ? (
+                    <button>{document.name}</button>
+                  ) : (
+                    <button onClick={() => showDocuments(document)}>
+                      {document.name}
+                    </button>
+                  )}
                 </a>
               );
             })

@@ -1,0 +1,41 @@
+.borderjs {
+    border: 5px solid yellow !important;
+}
+
+.buttonToChoose4 {
+    display: inline-block;
+    position: absolute;
+    right: calc(50% + 1px);
+    border: 1px solid #e0d093;
+    border-radius: 13px 0 0 13px;
+    width: 204px;
+    height: 391px;
+    top: 108px;
+    /*cursor: pointer;*/
+    background: transparent;
+}
+
+.buttonToChoose4:hover {
+    background-color: transparent;
+    border: 5px solid yellow;
+}
+
+.buttonToChoose5:hover {
+    background-color: transparent;
+    border: 5px solid yellow;
+}
+
+.buttonToChoose5 {
+    display: inline-block;
+    position: absolute;
+    right: calc(50% + -204px);
+    width: 204px;
+    height: 393px;
+    top: 107px;
+    top: 107px;
+    border: 3px solid #e0d093;
+    border-radius: 0 13px 13px 0;
+    cursor: pointer;
+    background: transparent;
+    /* border: none; */
+}

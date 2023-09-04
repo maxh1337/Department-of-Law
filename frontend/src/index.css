@@ -180,6 +180,10 @@ input {
     background-color: transparent;
 }
 
+input:focus {
+    outline: none;
+}
+
 a {
     cursor: pointer;
 }
@@ -219,6 +223,18 @@ button:hover {
     width: 28px;
     top: 386px;
     left: 50%;
+}
+
+#i2-exclamation {
+    position: absolute;
+    width: 28px;
+    top: 386px;
+    left: 48%;
+    top: 440px;
+}
+
+#i2-exclamation:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .criminal-case {

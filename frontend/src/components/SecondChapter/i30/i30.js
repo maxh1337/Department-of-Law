@@ -1,0 +1,28 @@
+import { useNavigate } from "react-router-dom";
+import CriminalCase from "../../ui/criminal-case/criminal-case";
+import i30 from "../../../images/PART 2/i30.webp";
+import { doc30 } from "../../ui/allFiles2";
+
+const I30 = () => {
+  const navigate = useNavigate();
+  const documents = JSON.parse(localStorage.getItem("documents"));
+  const newDocuments = [...documents, doc30];
+  const nextPage = () => {
+    localStorage.setItem("documents", JSON.stringify(newDocuments));
+    navigate("/i31");
+  };
+
+  return (
+    <div>
+      <CriminalCase />
+      <img src={i30} width="640px" height="542px" alt="i30" />
+      <div className="Buttons">
+        <button className="linkButton" onClick={nextPage}>
+          Далее
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default I30;
