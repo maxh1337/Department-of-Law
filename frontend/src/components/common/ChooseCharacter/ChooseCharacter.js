@@ -2,8 +2,8 @@ import p2 from "../../../images/p2.webp";
 import "./ChooseCharacter.css";
 import res1 from "../../../images/buttons/Resurs_1_4x.webp";
 import res2 from "../../../images/buttons/Resurs_2_4x.webp";
-import {useState} from "react";
-import {useNavigate} from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function ChooseCharacter() {
   const navigate = useNavigate();
@@ -34,11 +34,15 @@ function ChooseCharacter() {
   };
 
   const nextPage = () => {
-    if (currentCharacter !== 0) {
-      navigate("/choosecharacter1")
+    console.log(currentCharacter === "2");
+    if (currentCharacter === "1") {
+      localStorage.setItem("currentCharacter", 1);
+      navigate("/choosecharacter1");
+    } else if (currentCharacter === "2") {
+      localStorage.setItem("currentCharacter", 2);
+      navigate("/choosecharacterdoznavatel");
     }
-  }
-  
+  };
 
   return (
     <div>
@@ -100,4 +104,5 @@ function ChooseCharacter() {
     </div>
   );
 }
+
 export default ChooseCharacter;

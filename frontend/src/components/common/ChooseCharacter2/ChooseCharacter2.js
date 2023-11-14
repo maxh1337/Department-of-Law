@@ -11,10 +11,10 @@ function ChooseCharacter2() {
 
   const nextPage = () => {
     if (currentCharacter == 1) {
-      navigate("/finisheduniversity");
+      navigate("/vud1");
     }
     if (currentCharacter == 2) {
-      navigate("/i1");
+      navigate("/vud2");
     }
   };
 

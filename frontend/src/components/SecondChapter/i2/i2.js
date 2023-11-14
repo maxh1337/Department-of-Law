@@ -21,11 +21,6 @@ const I2 = () => {
         />
       </a>
       <img src={i2} width="640px" height="542px" alt="i2" />
-      {/*<div className="Buttons">*/}
-      {/*  <button className="linkButton" onClick={nextPage}>*/}
-      {/*    Дальше*/}
-      {/*  </button>*/}
-      {/*</div>*/}
     </div>
   );
 };

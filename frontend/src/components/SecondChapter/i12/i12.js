@@ -7,7 +7,7 @@ import i12121 from "../../../images/PART 2/i12 12.1.webp";
 import i12122 from "../../../images/PART 2/i12 12.2.webp";
 import i12123 from "../../../images/PART 2/i12 12.3.webp";
 
-const I6 = () => {
+const I12 = () => {
   const navigate = useNavigate();
   const [error, setError] = useState(0);
   const nextPage = () => {
@@ -133,4 +133,4 @@ const I6 = () => {
   );
 };
 
-export default I6;
+export default I12;

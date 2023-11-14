@@ -7,12 +7,13 @@ import ChooseCharacter from "../common/ChooseCharacter/ChooseCharacter";
 import ChooseCharacter1 from "../common/ChooseCharacter1/ChooseCharacter1";
 import ChooseCharacter2 from "../common/ChooseCharacter2/ChooseCharacter2";
 import FinishedUniversity from "../common/FinishedUniversity/FinishedUniversity";
-import Save from "../common/save/save";
-import Load from "../common/load/load";
-import Continue from "../common/continue/continue";
 import { routes1 } from "../dataRoutesFirstChapter";
 import { routes2 } from "../dataRoutesSecondChapter";
-import { routes2Help } from "../dataRouterSecondChapterHelp";
+import { routes2Help } from "../dataRoutesSecondChapterHelp";
+import About from "../common/About/About";
+import Vud1 from "../common/Vud1/Vud1";
+import Vud2 from "../common/Vud2/Vud2";
+import ChooseCharacterDoznavatel from "../common/ChooseCharacterDoznavatel/ChooseCharacterDoznavatel";
 
 class App extends React.Component {
   constructor(props) {
@@ -55,14 +56,15 @@ class App extends React.Component {
           {/*Общие Routes*/}
           <Route path="/" exact element={<MainScreen />} /> {/*i1*/}
           <Route path="/start" exact element={<SecondScreen />} />
-          <Route path="/save" exact element={<Save />} />
-          <Route path="/load" exact element={<Load />} />
-          <Route path="/continue" exact element={<Continue />} />
+          <Route path="/about" exact element={<About />} />
+          <Route path="/vud1" exact element={<Vud1 />} />
+          <Route path="/vud2" exact element={<Vud2 />} />
           <Route
-            path="/choosecharacter"
+            path="/choosecharacterdoznavatel"
             exact
-            element={<ChooseCharacter />}
-          />{" "}
+            element={<ChooseCharacterDoznavatel />}
+          />
+          <Route path="/choosecharacter" exact element={<ChooseCharacter />} />{" "}
           {/*2*/}
           <Route
             path="/choosecharacter1"

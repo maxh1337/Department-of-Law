@@ -9,7 +9,7 @@ const Help3o1 = () => {
 
   return (
     <div>
-      <img src={i3o1} alt="15" width="640px" height="542px" alt="i3o1" />
+      <img src={i3o1} width="640px" height="542px" alt="i3o1" />
       <div className="Buttons">
         <button className="linkButton" onClick={Return}>
           Назад

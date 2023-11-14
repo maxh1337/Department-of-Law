@@ -19,4 +19,5 @@ function MainScreen({ GoNext }) {
     </div>
   );
 }
+
 export default MainScreen;
