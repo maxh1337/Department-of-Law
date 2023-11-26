@@ -11,8 +11,22 @@ class Error extends React.Component {
           src={this.props.loaded ? this.props.image : p9a}
           alt="p9а"
         ></img>
+        <h5
+          style={{
+            fontSize: "23px",
+            textAlign: "center",
+            position: "absolute",
+            top: "30px",
+            left: "calc(50% - 173px)",
+            width: "300px",
+            height: "70px",
+          }}
+        >
+          {this.props.eText}
+        </h5>
         <div className="error-text" id="2323">
           {this.props.text}
+          <br />
           <br />
           <br />
           <div className="buttons" style={this.props.styleButtons}>

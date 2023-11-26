@@ -7,7 +7,6 @@ const I1 = () => {
   const nextPage = () => {
     navigate("/i2");
   };
-
   return (
     <div>
       <CriminalCase />

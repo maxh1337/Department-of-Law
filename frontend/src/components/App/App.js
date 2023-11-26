@@ -1,4 +1,4 @@
-import "../../index.css";
+// import "../../index.css";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import MainScreen from "../common/MainScreen/MainScreen";
@@ -9,6 +9,7 @@ import ChooseCharacter2 from "../common/ChooseCharacter2/ChooseCharacter2";
 import FinishedUniversity from "../common/FinishedUniversity/FinishedUniversity";
 import { routes1 } from "../dataRoutesFirstChapter";
 import { routes2 } from "../dataRoutesSecondChapter";
+import { routes3 } from "../dataRoutesThirdChapter";
 import { routes2Help } from "../dataRoutesSecondChapterHelp";
 import About from "../common/About/About";
 import Vud1 from "../common/Vud1/Vud1";
@@ -43,6 +44,7 @@ class App extends React.Component {
 
     this.routes1 = routes1;
     this.routes2 = routes2;
+    this.routes3 = routes3;
     this.routes2Help = routes2Help;
   }
 
@@ -106,6 +108,16 @@ class App extends React.Component {
             );
           })}
           {this.routes2Help.map((route) => {
+            return (
+              <Route
+                path={route.path}
+                exact={route.exact}
+                key={`route ${route.path}`}
+                element={<route.component />}
+              />
+            );
+          })}
+          {this.routes3.map((route) => {
             return (
               <Route
                 path={route.path}

@@ -196,7 +196,7 @@ a {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.Buttons {
+.buttons {
     width: calc(100% - 4px);
     padding: 5px 2px 100px;
     z-index: 1
@@ -264,4 +264,15 @@ button:hover {
     vertical-align: center;
 }
 
+.button-cloud {
+    cursor: pointer;
+}
+
+.button-cloud:hover {
+    border: 3px solid yellow;
+}
+
+.button-cloud.selected {
+    border: 3px solid yellow;
+}
 
