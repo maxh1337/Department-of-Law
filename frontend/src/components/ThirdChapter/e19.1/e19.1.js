@@ -18,6 +18,17 @@ const E191 = () => {
         <>
           <CriminalCase />
           <img src={e19} width="640px" height="542px" alt="e19" />
+          <div // Ошибочный вариант
+            className="multiple-cloud"
+            style={{
+              position: "absolute",
+              top: "156px",
+              left: "calc(50% - 277px)",
+              width: "30px",
+              height: "30px",
+            }}
+            onClick={() => setError(1)}
+          ></div>
           <div
             className={
               firstCorrect === false
@@ -26,7 +37,7 @@ const E191 = () => {
             }
             style={{
               position: "absolute",
-              top: "156px",
+              top: "320px",
               left: "calc(50% - 277px)",
               width: "30px",
               height: "30px",
@@ -34,17 +45,6 @@ const E191 = () => {
             onClick={() => {
               setFirstCorrect(!firstCorrect);
             }}
-          ></div>
-          <div // Ошибочный вариант
-            className="multiple-cloud"
-            style={{
-              position: "absolute",
-              top: "320px",
-              left: "calc(50% - 277px)",
-              width: "30px",
-              height: "30px",
-            }}
-            onClick={() => setError(1)}
           ></div>
           <div // Ошибочный вариант
             className="multiple-cloud"

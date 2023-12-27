@@ -55,7 +55,7 @@ const E18 = () => {
           newButton={
             <button
               onClick={() => {
-                navigate("/he19o1");
+                navigate("/he18o1");
               }}
             >
               Не понятно

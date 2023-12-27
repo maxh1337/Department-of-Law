@@ -3,16 +3,14 @@ import { useState } from "react";
 import CriminalCase from "../../ui/criminal-case/criminal-case";
 import e22 from "../../../images/PART 3/e22.webp";
 import Error from "../../ui/error/error";
-import e from "../../../images/PART 3/E example clean.png";
+import e from "../../../images/PART 3/e23 23.1.webp";
 
 const E22 = () => {
   const navigate = useNavigate();
   const [error, setError] = useState(0);
-  const [firstCorrect, setFirstCorrect] = useState(false);
-  const [secondCorrect, setSecondCorrect] = useState(false);
 
   const nextPage = () => {
-    navigate("/e22");
+    navigate("/e23");
   };
 
   return (
@@ -20,63 +18,36 @@ const E22 = () => {
       {error === 0 ? (
         <>
           <CriminalCase />
-          <img src={e21} width="640px" height="542px" alt="e21" />
+          <img src={e22} width="640px" height="542px" alt="e22" />
           <div // Ошибка 21.1
             className="button-cloud"
             style={{
               position: "absolute",
-              top: "172px",
-              left: "calc(50% - 313px)",
-              width: "304px",
-              height: "70px",
+              top: "192px",
+              left: "calc(50% - 235px)",
+              width: "120px",
+              height: "120px",
             }}
-            onClick={() => {
-              setError(1);
-            }}
+            onClick={nextPage}
           ></div>
           <div // Ошибка 21.2
             className="button-cloud"
             style={{
               position: "absolute",
-              top: "172px",
-              left: "calc(50% - -14px)",
-              width: "290px",
-              height: "74px",
+              top: "192px",
+              left: "calc(50% - -94px)",
+              width: "120px",
+              height: "120px",
             }}
             onClick={() => {
-              setError(2);
+              setError(1);
             }}
-          ></div>
-          <div // Ошибка 21.3
-            className="button-cloud"
-            style={{
-              position: "absolute",
-              top: "290px",
-              left: "calc(50% + 60px)",
-              width: "220px",
-              height: "70px",
-            }}
-            onClick={() => {
-              setError(3);
-            }}
-          ></div>
-          <div
-            className="button-cloud"
-            style={{
-              position: "absolute",
-              top: "287px",
-              left: "calc(50% - 313px)",
-              width: "304px",
-              height: "74px",
-            }}
-            onClick={nextPage}
           ></div>
         </>
-      ) : error === 1 ? (
+      ) : (
         <Error // 21.1
           loaded="true"
           image={e}
-          eText="Новое процессуальное действие?"
           onClick1={() => {
             setError(0);
           }}
@@ -84,47 +55,7 @@ const E22 = () => {
           newButton={
             <button
               onClick={() => {
-                navigate("/he21o1");
-              }}
-            >
-              Не понятно
-            </button>
-          }
-          button2style={{ display: "none" }}
-        />
-      ) : error === 2 ? (
-        <Error // 21.2
-          loaded="true"
-          image={e}
-          eText="Без экспертизы не обойтись?"
-          onClick1={() => {
-            setError(0);
-          }}
-          button1="Понятно"
-          newButton={
-            <button
-              onClick={() => {
-                navigate("/he21o2");
-              }}
-            >
-              Не понятно
-            </button>
-          }
-          button2style={{ display: "none" }}
-        />
-      ) : (
-        <Error // 21.3
-          loaded="true"
-          image={e}
-          eText="Что-то новенькое!"
-          onClick1={() => {
-            setError(0);
-          }}
-          button1="Понятно"
-          newButton={
-            <button
-              onClick={() => {
-                navigate("/he21o2");
+                navigate("/he22o1");
               }}
             >
               Не понятно

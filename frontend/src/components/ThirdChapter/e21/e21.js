@@ -104,7 +104,7 @@ const E21 = () => {
           newButton={
             <button
               onClick={() => {
-                navigate("/he21o2");
+                navigate("/he21o1");
               }}
             >
               Не понятно
@@ -124,7 +124,7 @@ const E21 = () => {
           newButton={
             <button
               onClick={() => {
-                navigate("/he21o2");
+                navigate("/he21o1");
               }}
             >
               Не понятно

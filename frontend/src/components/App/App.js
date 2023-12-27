@@ -11,6 +11,7 @@ import { routes1 } from "../dataRoutesFirstChapter";
 import { routes2 } from "../dataRoutesSecondChapter";
 import { routes3 } from "../dataRoutesThirdChapter";
 import { routes2Help } from "../dataRoutesSecondChapterHelp";
+import { routes3Help } from "../dataRoutesThirdChapterHelp";
 import About from "../common/About/About";
 import Vud1 from "../common/Vud1/Vud1";
 import Vud2 from "../common/Vud2/Vud2";
@@ -46,6 +47,7 @@ class App extends React.Component {
     this.routes2 = routes2;
     this.routes3 = routes3;
     this.routes2Help = routes2Help;
+    this.routes3Help = routes3Help;
   }
 
   render() {
@@ -118,6 +120,16 @@ class App extends React.Component {
             );
           })}
           {this.routes3.map((route) => {
+            return (
+              <Route
+                path={route.path}
+                exact={route.exact}
+                key={`route ${route.path}`}
+                element={<route.component />}
+              />
+            );
+          })}
+          {this.routes3Help.map((route) => {
             return (
               <Route
                 path={route.path}
